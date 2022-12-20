@@ -7,12 +7,6 @@
       "bounding_box": "piece",
       "spawns": [
         {
-          "type": "hexfortress:wildfire",
-          "maxCount": 1,
-          "minCount": 1,
-          "weight": 2
-        },
-        {
           "type": "minecraft:ghast",
           "maxCount": 4,
           "minCount": 4,
