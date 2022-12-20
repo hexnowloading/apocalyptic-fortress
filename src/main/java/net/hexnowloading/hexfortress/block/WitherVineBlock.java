@@ -1,26 +1,20 @@
 package net.hexnowloading.hexfortress.block;
 
-import net.hexnowloading.hexfortress.entity.WildfireEntity;
-import net.hexnowloading.hexfortress.registry.HFItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.Difficulty;
-import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.monster.Blaze;
 import net.minecraft.world.entity.monster.Ghast;
 import net.minecraft.world.entity.monster.WitherSkeleton;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.context.BlockPlaceContext;
-import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
@@ -30,9 +24,6 @@ import net.minecraft.world.level.block.MultifaceSpreader;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.pathfinder.PathComputationType;
-import net.minecraft.world.phys.Vec3;
-import net.minecraft.world.phys.shapes.CollisionContext;
-import net.minecraft.world.phys.shapes.VoxelShape;
 
 import javax.annotation.Nullable;
 
@@ -57,7 +48,7 @@ public class WitherVineBlock extends MultifaceBlock implements BonemealableBlock
     }
 
     private boolean shouldDamage(LivingEntity livingEntity) {
-        return !(livingEntity instanceof WitherSkeleton || livingEntity instanceof Blaze || livingEntity instanceof Ghast || livingEntity instanceof WildfireEntity || livingEntity instanceof Player);
+        return !(livingEntity instanceof WitherSkeleton || livingEntity instanceof Blaze || livingEntity instanceof Ghast || livingEntity instanceof Player);
     }
 
     private boolean shouldDamagePlayer(LivingEntity livingEntity, Level level) {
@@ -97,7 +88,7 @@ public class WitherVineBlock extends MultifaceBlock implements BonemealableBlock
     @Override
     public void playerDestroy(Level level, Player player, BlockPos pos, BlockState state, @Nullable BlockEntity blockEntity, ItemStack stack) {
         super.playerDestroy(level, player, pos, state, blockEntity, stack);
-        if (!level.isClientSide && level.getDifficulty() != Difficulty.PEACEFUL && !stack.is(HFItems.WITHERITE_SWORD.get()) && !stack.is(HFItems.WITHERITE_SHEARS.get())) {
+        if (!level.isClientSide && level.getDifficulty() != Difficulty.PEACEFUL) {
             player.addEffect(new MobEffectInstance(MobEffects.WITHER, 40,1));
         }
     }

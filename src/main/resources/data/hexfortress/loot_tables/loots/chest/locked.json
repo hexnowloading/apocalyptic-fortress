@@ -183,16 +183,6 @@
           "type": "minecraft:item",
           "weight": 1,
           "name": "minecraft:enchanted_golden_apple"
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 1,
-          "name": "hexfortress:witherite_shears"
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 1,
-          "name": "hexfortress:obsidian_talisman"
         }
       ]
     }

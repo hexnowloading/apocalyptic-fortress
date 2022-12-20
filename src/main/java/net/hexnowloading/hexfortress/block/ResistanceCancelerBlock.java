@@ -71,8 +71,6 @@ public class ResistanceCancelerBlock extends BaseEntityBlock implements EntityBl
 
     public static boolean isWaterBucket(ItemStack itemStack) { return itemStack.is(Items.WATER_BUCKET); }
 
-    public static boolean isBlazePowder(ItemStack itemStack) { return itemStack.is(Items.BLAZE_POWDER); }
-
     public void unlockBlockState(BlockState state, Level level, BlockPos pos) {
         level.setBlock(pos, state.setValue(HFProperties.LOCKED, false), 0);
     }
@@ -109,29 +107,6 @@ public class ResistanceCancelerBlock extends BaseEntityBlock implements EntityBl
         }
     }
 
-    public void spawnReward(Level level, BlockState state, BlockPos pos) {
-        RandomSource randomSource = level.getRandom();
-        if (level instanceof  ServerLevel) {
-            double d0 = (double) pos.getX() + 0.5D;
-            double d1 = (double) pos.getY() + 0.5D;
-            double d2 = (double) pos.getZ() + 0.5D;
-            ((ServerLevel) level).sendParticles(ParticleTypes.SMOKE, d0, d1, d2, 5, 0.5D, 0.5D, 0.5D, 0.001D);
-            if (randomSource.nextFloat() < 0.05F) {
-                double x = pos.getX() + 0.5D;
-                double y = pos.getY() + 0.8D;
-                double z = pos.getZ() + 0.5D;
-
-                double speed = randomSource.nextGaussian() * 0.2D;
-
-                ((ServerLevel) level).sendParticles(ParticleTypes.FLAME, x, y, z, 20, 0, 0, 0, speed);
-
-                playSound(level, pos, state, SoundEvents.FIRECHARGE_USE);
-                popResource(level, pos, new ItemStack(HFItems.BLAZE_CORE.get(), 1));
-                level.destroyBlock(pos, false);
-            }
-        }
-    }
-
     @Override
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
         if (!level.isClientSide) {
@@ -149,10 +124,6 @@ public class ResistanceCancelerBlock extends BaseEntityBlock implements EntityBl
                             increaseRange(player, state, level, pos);
                         } else if (isWaterBucket(itemStack)) {
                             decreaseRange(player, state, level, pos);
-                        } else if (isBlazePowder(itemStack)) {
-                            playSound(level, pos, state, SoundEvents.FIRECHARGE_USE);
-                            spawnReward(level, state, pos);
-                            return InteractionResult.CONSUME;
                         } else {
                             deactivateBlockState(state, level, pos);
                         }
@@ -177,11 +148,6 @@ public class ResistanceCancelerBlock extends BaseEntityBlock implements EntityBl
                             increaseRange(player, state, level, pos);
                         } else if (isWaterBucket(itemStack)) {
                             decreaseRange(player, state, level, pos);
-                        } else if (isBlazePowder(itemStack)) {
-                            playSound(level, pos, state, SoundEvents.FIRECHARGE_USE);
-                            itemStack.shrink(1);
-                            spawnReward(level, state, pos);
-                            return InteractionResult.CONSUME;
                         } else {
                             deactivateBlockState(state, level, pos);
                         }

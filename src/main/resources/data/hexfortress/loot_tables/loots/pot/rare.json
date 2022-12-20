@@ -16,11 +16,6 @@
               }
             }
           ]
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 1,
-          "name": "hexfortress:fragment_of_greed"
         }
       ]
     }

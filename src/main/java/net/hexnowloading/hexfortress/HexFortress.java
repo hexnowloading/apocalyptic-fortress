@@ -56,7 +56,7 @@ public class HexFortress {
 
     private void registerTab(CreativeModeTabEvent.Register event) {
         List<RegistryObject<Block>> blockBlackList = List.of(HFBlocks.BLAZE_CLUSTER);
-        List<RegistryObject<Item>> itemBlackList = List.of(HFItems.OBSIDIAN_TEAR,HFItems.ENCHANTED_OBSIDIAN_TALISMAN,HFItems.WITHER_BOW,HFItems.ENCHANTED_OBSIDIAN_SWORD);
+        List<RegistryObject<Item>> itemBlackList = List.of();
         event.registerCreativeModeTab(new ResourceLocation(MODID, "hexfortress"), builder -> {
                 builder
                         .title(Component.translatable("itemgroup.hexfortress"))

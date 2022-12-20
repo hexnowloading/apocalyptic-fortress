@@ -52,7 +52,6 @@ public class HFBlocks {
     /* Block that uses mod class */
     public static final RegistryObject<Block> BLAZE_CLUSTER = registerBlock("blaze_cluster", () -> new BlazeClusterBlock(BlockBehaviour.Properties.copy(END_ROD).strength(6f).requiresCorrectToolForDrops().noOcclusion().lightLevel((lightlevel) -> {return 5;}).sound(SoundType.AMETHYST_CLUSTER)), true);
     public static final RegistryObject<Block> FORTRESS_POT = registerBlock("fortress_pot", () -> new PotBlock(BlockBehaviour.Properties.of(Material.DECORATION).strength(0.3f, 0.3f).noOcclusion().sound(SoundType.GLASS)), true);
-    public static final RegistryObject<Block> POT_OF_GREED = registerBlock("pot_of_greed", () -> new PotOfGreedBlock(BlockBehaviour.Properties.of(Material.DECORATION).strength(0.3f, 0.3f).noOcclusion().sound(SoundType.GLASS)), true);
     public static final RegistryObject<Block> GOLD_INGOT_PILE = registerBlock("gold_ingot_pile", () -> new PileBlock(BlockBehaviour.Properties.of(Material.DECORATION).strength(3.0f, 6.0f).noOcclusion().sound(SoundType.METAL)), true);
     public static final RegistryObject<Block> WITHER_VINE = registerBlock("wither_vine", () -> new WitherVineBlock(BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT).strength(0.2f).noOcclusion().sound(SoundType.VINE)), true);
     public static final RegistryObject<Block> WITHER_LEAVES = registerBlock("wither_leaves", () -> new WitherLeavesBlock(BlockBehaviour.Properties.of(Material.LEAVES).strength(0.2F).noOcclusion().sound(SoundType.GRASS)), true);

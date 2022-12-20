@@ -13,22 +13,6 @@
           "input_predicate": {
             "predicate_type": "minecraft:random_block_match",
             "block": "minecraft:white_wool",
-            "probability": 0.01
-          },
-          "output_state": {
-            "Name": "hexfortress:pot_of_greed"
-          }
-        },
-        {
-          "position_predicate": {
-            "predicate_type": "minecraft:always_true"
-          },
-          "location_predicate": {
-            "predicate_type": "minecraft:always_true"
-          },
-          "input_predicate": {
-            "predicate_type": "minecraft:random_block_match",
-            "block": "minecraft:white_wool",
             "probability": 0.3
           },
           "output_state": {
