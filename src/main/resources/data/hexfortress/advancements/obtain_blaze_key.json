@@ -1,0 +1,37 @@
+{
+  "parent": "hexfortress:loot_dungeon_chest",
+  "criteria": {
+    "blaze_key": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "hexfortress:blaze_key"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.hexfortress.obtain_blaze_key.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "hexfortress:blaze_key"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.hexfortress.obtain_blaze_key.title"
+    }
+  },
+  "requirements": [
+    [
+      "blaze_key"
+    ]
+  ]
+}

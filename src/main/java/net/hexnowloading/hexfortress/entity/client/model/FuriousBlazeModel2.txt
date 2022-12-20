@@ -1,0 +1,54 @@
+// Made with Blockbench 4.5.2
+// Exported for Minecraft version 1.17 - 1.18 with Mojang mappings
+// Paste this class into your mod and generate all required imports
+
+
+public class furious_blaze<T extends Entity> extends EntityModel<T> {
+	// This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
+	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation("modid", "furious_blaze"), "main");
+	private final ModelPart head;
+	private final ModelPart rods;
+
+	public furious_blaze(ModelPart root) {
+		this.head = root.getChild("head");
+		this.rods = root.getChild("rods");
+	}
+
+	public static LayerDefinition createBodyLayer() {
+		MeshDefinition meshdefinition = new MeshDefinition();
+		PartDefinition partdefinition = meshdefinition.getRoot();
+
+		PartDefinition head = partdefinition.addOrReplaceChild("head", CubeListBuilder.create().texOffs(0, 0).addBox(-4.0F, -8.0F, -4.0F, 8.0F, 8.0F, 8.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 4.0F, 0.0F));
+
+		PartDefinition rods = partdefinition.addOrReplaceChild("rods", CubeListBuilder.create(), PartPose.offset(0.0F, 24.0F, 0.0F));
+
+		PartDefinition rod1 = rods.addOrReplaceChild("rod1", CubeListBuilder.create().texOffs(16, 16).addBox(-3.75F, -2.0F, -2.0F, 11.0F, 4.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(7.75F, -14.0F, 0.0F, 0.0F, 0.0F, 1.1781F));
+
+		PartDefinition cube_r1 = rod1.addOrReplaceChild("cube_r1", CubeListBuilder.create().texOffs(0, 16).addBox(4.0F, -3.0F, -2.0F, 6.0F, 6.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-0.75F, 0.0F, 7.0F, 0.0F, 1.5708F, 0.0F));
+
+		PartDefinition rod2 = rods.addOrReplaceChild("rod2", CubeListBuilder.create().texOffs(16, 16).addBox(-3.75F, -2.0F, -2.0F, 11.0F, 4.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-0.25F, -14.0F, -8.0F, 1.5708F, 0.3927F, 1.5708F));
+
+		PartDefinition cube_r2 = rod2.addOrReplaceChild("cube_r2", CubeListBuilder.create().texOffs(0, 16).addBox(4.0F, -3.0F, -2.0F, 6.0F, 6.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-0.75F, 0.0F, 7.0F, 0.0F, 1.5708F, 0.0F));
+
+		PartDefinition rod3 = rods.addOrReplaceChild("rod3", CubeListBuilder.create().texOffs(16, 16).addBox(-3.75F, -2.0F, -2.0F, 11.0F, 4.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-8.25F, -14.0F, 0.0F, 3.1416F, 0.0F, 1.9635F));
+
+		PartDefinition cube_r3 = rod3.addOrReplaceChild("cube_r3", CubeListBuilder.create().texOffs(0, 16).addBox(4.0F, -3.0F, -2.0F, 6.0F, 6.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-0.75F, 0.0F, 7.0F, 0.0F, 1.5708F, 0.0F));
+
+		PartDefinition rod4 = rods.addOrReplaceChild("rod4", CubeListBuilder.create().texOffs(16, 16).addBox(-3.75F, -2.0F, -2.0F, 11.0F, 4.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-0.25F, -14.0F, 8.0F, -1.5708F, -0.3927F, 1.5708F));
+
+		PartDefinition cube_r4 = rod4.addOrReplaceChild("cube_r4", CubeListBuilder.create().texOffs(0, 16).addBox(4.0F, -3.0F, -2.0F, 6.0F, 6.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-0.75F, 0.0F, 7.0F, 0.0F, 1.5708F, 0.0F));
+
+		return LayerDefinition.create(meshdefinition, 64, 64);
+	}
+
+	@Override
+	public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+
+	}
+
+	@Override
+	public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
+		head.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
+		rods.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
+	}
+}

@@ -1,0 +1,29 @@
+modLoader="javafml" #mandatory
+loaderVersion="[44,)"
+license="All rights reserved"
+[[mods]]
+modId="hexfortress"
+version="0.0.1-1.19.3"
+displayName="Apocalyptic Fortress"
+logoFile="icon.png"
+credits="Hexnowloading"
+authors="Hexnowloading"
+description='''
+Fortress Overhaul Mod made by HexNowLoading on November 11th, 2022.
+
+This mod replaces the existing nether fortress with a big one.
+
+Have fun!
+'''
+[[dependencies.hexfortress]]
+modId="forge"
+mandatory=true
+versionRange="[44,)"
+ordering="NONE"
+side="BOTH"
+[[dependencies.hexfortress]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.19.3,1.20)"
+ordering="NONE"
+side="BOTH"

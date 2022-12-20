@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/wall_inventory",
+  "textures": {
+    "wall": "hexfortress:block/polished_heavy_nether_bricks"
+  }
+}

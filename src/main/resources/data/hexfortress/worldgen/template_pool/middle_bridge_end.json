@@ -1,0 +1,60 @@
+{
+  "name": "hexfortress:middle_bridge_end",
+  "fallback": "hexfortress:middle_bridge_end",
+  "elements": [
+    {
+      "weight": 40,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "hexfortress:bridge/end",
+        "processors": "minecraft:empty"
+      }
+    },
+    {
+      "weight": 10,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "hexfortress:bridge/end_broken",
+        "processors": "hexfortress:decor/random_nether_brick_pile"
+      }
+    },
+    {
+      "weight": 5,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "hexfortress:stairs/middle_low_straight_right",
+        "processors": "minecraft:empty"
+      }
+    },
+    {
+      "weight": 5,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "hexfortress:stairs/middle_low_straight_left",
+        "processors": "minecraft:empty"
+      }
+    },
+    {
+      "weight": 5,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "hexfortress:stairs/middle_low_cross_right",
+        "processors": "minecraft:empty"
+      }
+    },
+    {
+      "weight": 5,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "hexfortress:stairs/middle_low_cross_left",
+        "processors": "minecraft:empty"
+      }
+    }
+  ]
+}

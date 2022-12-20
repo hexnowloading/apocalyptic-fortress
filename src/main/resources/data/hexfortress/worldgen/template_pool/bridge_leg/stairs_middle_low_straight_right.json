@@ -1,0 +1,15 @@
+{
+  "name": "hexfortress:bridge_leg/stairs_middle_low_straight_right",
+  "fallback": "hexfortress:bridge_leg/stairs_middle_low_straight_right",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "hexfortress:bridge_leg/stairs_middle_low_straight_right",
+        "processors": "minecraft:empty"
+      }
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "parent": "hexfortress:deactivate_fortress_beacon",
+  "criteria": {
+    "blaze_core": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "hexfortress:blaze_core"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.hexfortress.obtain_blaze_core.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "hexfortress:blaze_core"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.hexfortress.obtain_blaze_core.title"
+    }
+  },
+  "requirements": [
+    [
+      "blaze_core"
+    ]
+  ]
+}

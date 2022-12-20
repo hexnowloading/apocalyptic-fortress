@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "hexfortress:block/heavy_nether_brick_pillar_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "hexfortress:block/heavy_nether_brick_pillar"
+    },
+    "axis=z": {
+      "model": "hexfortress:block/heavy_nether_brick_pillar_horizontal",
+      "x": 90
+    }
+  }
+}

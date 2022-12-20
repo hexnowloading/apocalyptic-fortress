@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_wall_side",
+  "textures": {
+    "wall": "hexfortress:block/heavy_nether_bricks"
+  }
+}

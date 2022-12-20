@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "hexfortress:block/mixed_soul_sand_nether_tiles_moderate"
+  }
+}

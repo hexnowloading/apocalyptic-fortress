@@ -1,0 +1,15 @@
+{
+  "name": "hexfortress:low_bridge_center_adjuster",
+  "fallback": "hexfortress:low_bridge_center_adjuster",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "hexfortress:low_bridge_adjuster/center",
+        "processors": "minecraft:empty"
+      }
+    }
+  ]
+}

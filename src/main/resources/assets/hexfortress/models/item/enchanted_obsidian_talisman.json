@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "hexfortress:item/enchanted_obsidian_talisman"
+  }
+}

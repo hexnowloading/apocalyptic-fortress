@@ -1,0 +1,15 @@
+{
+  "name": "hexfortress:bridge_leg/short_straight",
+  "fallback": "hexfortress:bridge_leg/short_straight",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "hexfortress:bridge_leg/short_straight",
+        "processors": "minecraft:empty"
+      }
+    }
+  ]
+}

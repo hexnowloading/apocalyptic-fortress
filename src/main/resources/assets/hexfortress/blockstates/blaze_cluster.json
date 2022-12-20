@@ -1,0 +1,30 @@
+{
+	"variants": {
+		"facing=down": {
+			"model": "hexfortress:block/blaze_cluster",
+			"x": 180
+		},
+		"facing=east": {
+			"model": "hexfortress:block/blaze_cluster",
+			"x": 90,
+			"y": 90
+		},
+		"facing=north": {
+			"model": "hexfortress:block/blaze_cluster",
+			"x": 90
+		},
+		"facing=south": {
+			"model": "hexfortress:block/blaze_cluster",
+			"x": 90,
+			"y": 180
+		},
+		"facing=up": {
+			"model": "hexfortress:block/blaze_cluster"
+		},
+		"facing=west": {
+			"model": "hexfortress:block/blaze_cluster",
+			"x": 90,
+			"y": 270
+		}
+	}
+}

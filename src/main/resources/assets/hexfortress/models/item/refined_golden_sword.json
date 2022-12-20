@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "hexfortress:item/refined_golden_sword"
+  }
+}

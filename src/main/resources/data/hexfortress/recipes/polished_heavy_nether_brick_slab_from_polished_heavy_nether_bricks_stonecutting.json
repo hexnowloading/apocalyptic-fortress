@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "hexfortress:polished_heavy_nether_bricks"
+  },
+  "result": "hexfortress:polished_heavy_nether_brick_slab"
+}

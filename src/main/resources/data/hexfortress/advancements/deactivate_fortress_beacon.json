@@ -1,0 +1,42 @@
+{
+  "display": {
+    "icon": {
+      "item": "hexfortress:resistance_canceler"
+    },
+    "title": {
+      "translate": "advancements.hexfortress.deactivate_fortress_beacon.title"
+    },
+    "description": {
+      "translate": "advancements.hexfortress.deactivate_fortress_beacon.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "hexfortress:obtain_blaze_key",
+  "criteria": {
+    "deactivate_fortress_beacon": {
+      "trigger": "minecraft:item_used_on_block",
+      "conditions": {
+        "item": {
+          "items": [
+            "hexfortress:blaze_key"
+          ]
+        },
+        "location": {
+          "block": {
+            "blocks": [
+              "hexfortress:resistance_canceler"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "deactivate_fortress_beacon"
+    ]
+  ]
+}

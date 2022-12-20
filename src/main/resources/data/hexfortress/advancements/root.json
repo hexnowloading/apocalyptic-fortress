@@ -1,0 +1,35 @@
+{
+  "display": {
+    "icon": {
+      "item": "hexfortress:chiseled_golden_heavy_nether_bricks"
+    },
+    "title": {
+      "translate": "advancements.hexfortress.root.title"
+    },
+    "description": {
+      "translate": "advancements.hexfortress.root.description"
+    },
+    "background": "hexfortress:textures/block/heavy_nether_bricks.png",
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "locate_nether_fortress": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": {
+          "location": {
+            "structure": "hexfortress:nether_fortress"
+          }
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "locate_nether_fortress"
+    ]
+  ]
+}

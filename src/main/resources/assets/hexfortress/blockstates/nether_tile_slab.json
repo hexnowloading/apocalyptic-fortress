@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "hexfortress:block/nether_tile_slab"
+    },
+    "type=double": {
+      "model": "hexfortress:block/nether_tiles"
+    },
+    "type=top": {
+      "model": "hexfortress:block/nether_tile_slab_top"
+    }
+  }
+}

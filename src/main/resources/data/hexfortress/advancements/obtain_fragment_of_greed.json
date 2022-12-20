@@ -1,0 +1,37 @@
+{
+  "parent": "hexfortress:root",
+  "criteria": {
+    "fragment_of_greed": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "hexfortress:fragment_of_greed"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.hexfortress.obtain_fragment_of_greed.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "hexfortress:fragment_of_greed"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.hexfortress.obtain_fragment_of_greed.title"
+    }
+  },
+  "requirements": [
+    [
+      "fragment_of_greed"
+    ]
+  ]
+}

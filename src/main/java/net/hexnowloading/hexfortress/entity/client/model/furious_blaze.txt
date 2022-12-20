@@ -1,0 +1,8 @@
+
+public static final AnimationDefinition FURIOUS_BLAZE_ATTACK = AnimationDefinition.Builder.withLength(3f)
+.addAnimation("rod1",
+	new AnimationChannel(AnimationChannel.Targets.ROTATION,
+		new Keyframe(0f, KeyframeAnimations.degreeVec(0f, 0f, 0f),
+			AnimationChannel.Interpolations.CATMULLROM),
+		new Keyframe(3f, KeyframeAnimations.degreeVec(0f, 0f, -67.5f),
+			AnimationChannel.Interpolations.CATMULLROM))).build();

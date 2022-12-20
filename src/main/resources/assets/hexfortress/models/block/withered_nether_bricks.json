@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "hexfortress:block/withered_nether_bricks"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "parent": "hexfortress:obtain_crest_of_greed",
+  "criteria": {
+    "emblem_of_greed": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "hexfortress:emblem_of_greed"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.hexfortress.obtain_emblem_of_greed.description"
+    },
+    "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "item": "hexfortress:emblem_of_greed"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.hexfortress.obtain_emblem_of_greed.title"
+    }
+  },
+  "requirements": [
+    [
+      "emblem_of_greed"
+    ]
+  ]
+}

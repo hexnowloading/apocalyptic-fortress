@@ -1,0 +1,91 @@
+{
+	"credit": "Made with Blockbench",
+	"texture_size": [32, 32],
+	"textures": {
+		"0": "hexfortress:block/fortress_pot",
+		"particle": "hexfortress:block/fortress_pot"
+	},
+	"elements": [
+		{
+			"from": [4, 0, 4],
+			"to": [12, 10, 12],
+			"faces": {
+				"north": {"uv": [0, 0, 4, 5], "texture": "#0"},
+				"east": {"uv": [4, 0, 8, 5], "texture": "#0"},
+				"south": {"uv": [0, 5, 4, 10], "texture": "#0"},
+				"west": {"uv": [4, 5, 8, 10], "texture": "#0"},
+				"up": {"uv": [12, 4, 8, 0], "texture": "#0"},
+				"down": {"uv": [12, 4, 8, 8], "texture": "#0"}
+			}
+		},
+		{
+			"from": [5, 11, 5],
+			"to": [11, 13, 11],
+			"faces": {
+				"north": {"uv": [7, 11, 10, 12], "texture": "#0"},
+				"east": {"uv": [11, 8, 14, 9], "texture": "#0"},
+				"south": {"uv": [11, 9, 14, 10], "texture": "#0"},
+				"west": {"uv": [10, 11, 13, 12], "texture": "#0"},
+				"up": {"uv": [11, 11, 8, 8], "texture": "#0"},
+				"down": {"uv": [3, 10, 0, 13], "texture": "#0"}
+			}
+		},
+		{
+			"from": [6, 10, 6],
+			"to": [10, 11, 10],
+			"faces": {
+				"north": {"uv": [11, 10, 13, 10.5], "texture": "#0"},
+				"east": {"uv": [11, 10.5, 13, 11], "texture": "#0"},
+				"south": {"uv": [12, 0, 14, 0.5], "texture": "#0"},
+				"west": {"uv": [12, 0.5, 14, 1], "texture": "#0"},
+				"up": {"uv": [5, 12, 3, 10], "texture": "#0"},
+				"down": {"uv": [7, 10, 5, 12], "texture": "#0"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [75, 45, 0],
+			"translation": [0, 2.5, 0],
+			"scale": [0.375, 0.375, 0.375]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [75, 45, 0],
+			"translation": [0, 2.5, 0],
+			"scale": [0.375, 0.375, 0.375]
+		},
+		"firstperson_righthand": {
+			"rotation": [0, 45, 0],
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"firstperson_lefthand": {
+			"rotation": [0, 225, 0],
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"ground": {
+			"translation": [0, 1, 0],
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"gui": {
+			"rotation": [30, 225, 0],
+			"scale": [0.625, 0.625, 0.625]
+		},
+		"head": {
+			"translation": [0, 14.25, 0]
+		},
+		"fixed": {
+			"scale": [0.5, 0.5, 0.5]
+		}
+	},
+	"groups": [
+		0,
+		1,
+		2,
+		{
+			"name": "pot",
+			"origin": [0, 0, 0],
+			"color": 0,
+			"children": []
+		}
+	]
+}

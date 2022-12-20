@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "Y#Y",
+    " X ",
+    " X "
+  ],
+  "key": {
+    "#": {
+      "item": "hexfortress:blaze_core"
+    },
+    "X": {
+      "item": "minecraft:stick"
+    },
+    "Y": {
+      "item": "minecraft:netherite_ingot"
+    }
+  },
+  "result": {
+    "count": 1,
+    "item": "hexfortress:blaze_staff"
+  }
+}

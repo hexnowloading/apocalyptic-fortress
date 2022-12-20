@@ -1,0 +1,24 @@
+{
+  "name": "hexfortress:low_bridge_adjusters",
+  "fallback": "hexfortress:low_bridge_end",
+  "elements": [
+    {
+      "weight": 3,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "hexfortress:low_bridge_adjuster/straight",
+        "processors": "minecraft:empty"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "hexfortress:low_bridge_adjuster/cross",
+        "processors": "minecraft:empty"
+      }
+    }
+  ]
+}

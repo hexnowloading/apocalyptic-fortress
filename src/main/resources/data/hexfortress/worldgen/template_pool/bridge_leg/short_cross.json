@@ -1,0 +1,15 @@
+{
+  "name": "hexfortress:bridge_leg/short_cross",
+  "fallback": "hexfortress:bridge_leg/short_cross",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "hexfortress:bridge_leg/short_cross",
+        "processors": "minecraft:empty"
+      }
+    }
+  ]
+}

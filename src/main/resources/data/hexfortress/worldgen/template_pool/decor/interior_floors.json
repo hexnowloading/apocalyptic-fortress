@@ -1,0 +1,96 @@
+{
+  "name": "hexfortress:decor/interior_floors",
+  "fallback": "hexfortress:decor/interior_floors",
+  "elements": [
+    {
+      "weight": 9,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "hexfortress:decor/interior_floor/basic",
+        "processors": "hexfortress:decor/random_nether_brick_pile"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "hexfortress:decor/interior_floor/broken",
+        "processors": "hexfortress:decor/random_nether_brick_pile"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "hexfortress:decor/interior_floor/divider_fence",
+        "processors": "minecraft:empty"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "hexfortress:decor/interior_floor/divider_wall",
+        "processors": "minecraft:empty"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "hexfortress:decor/interior_floor/soul_sand_1",
+        "processors": "hexfortress:decor/random_nether_brick_pile"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "hexfortress:decor/interior_floor/soul_sand_2",
+        "processors": "hexfortress:decor/random_nether_brick_pile"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "hexfortress:decor/interior_floor/soul_sand_3",
+        "processors": "hexfortress:decor/random_nether_brick_pile"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "hexfortress:decor/interior_floor/wither_bush_1",
+        "processors": "hexfortress:decor/random_nether_brick_pile"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "hexfortress:decor/interior_floor/wither_bush_2",
+        "processors": "hexfortress:decor/random_nether_brick_pile"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "hexfortress:decor/interior_floor/wither_bush_3",
+        "processors": "hexfortress:decor/random_nether_brick_pile"
+      }
+    }
+  ]
+}

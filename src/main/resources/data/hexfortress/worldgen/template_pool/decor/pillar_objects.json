@@ -1,0 +1,60 @@
+{
+  "name": "hexfortress:decor/pillar_objects",
+  "fallback": "hexfortress:decor/pillar_objects",
+  "elements": [
+    {
+      "weight": 30,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "hexfortress:decor/pillar/basic",
+        "processors": "hexfortress:decor/random_nether_brick_pile"
+      }
+    },
+    {
+      "weight": 10,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "hexfortress:decor/pillar/gold",
+        "processors": "hexfortress:decor/random_gold_ingot_pile"
+      }
+    },
+    {
+      "weight": 15,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "hexfortress:decor/pillar/shelf",
+        "processors": "hexfortress:decor/random_all_with_debris"
+      }
+    },
+    {
+      "weight": 15,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "hexfortress:decor/pillar/obsidian",
+        "processors": "hexfortress:decor/crying_obsidian_20"
+      }
+    },
+    {
+      "weight": 15,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "hexfortress:decor/pillar/basalt",
+        "processors": "minecraft:empty"
+      }
+    },
+    {
+      "weight": 15,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "hexfortress:decor/pillar/soul_sand",
+        "processors": "minecraft:empty"
+      }
+    }
+  ]
+}

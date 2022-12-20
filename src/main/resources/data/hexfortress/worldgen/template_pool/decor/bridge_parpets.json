@@ -1,0 +1,85 @@
+{
+  "name": "hexfortress:decor/bridge_parpets",
+  "fallback": "hexfortress:decor/bridge_parpets",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "hexfortress:decor/bridge_parpet/chest",
+        "processors": "minecraft:empty"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "hexfortress:decor/bridge_parpet/pot",
+        "processors": "minecraft:empty"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "hexfortress:decor/bridge_parpet/explosive_barrel",
+        "processors": "minecraft:empty"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "hexfortress:decor/bridge_parpet/broken_short",
+        "processors": "hexfortress:decor/random_nether_brick_pile"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "hexfortress:decor/bridge_parpet/broken_long",
+        "processors": "hexfortress:decor/random_nether_brick_pile"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "hexfortress:decor/bridge_parpet/random_objects_long",
+        "processors": "hexfortress:decor/pots_30"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "hexfortress:decor/bridge_parpet/random_objects_long",
+        "processors": "hexfortress:decor/explosive_barrels_30"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "hexfortress:decor/bridge_parpet/lamp",
+        "processors": "minecraft:empty"
+      }
+    },
+    {
+      "weight": 24,
+      "element": {
+        "element_type": "minecraft:empty_pool_element",
+        "projection": "rigid"
+      }
+    }
+  ]
+}

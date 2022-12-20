@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "charges=0": {
+      "model": "hexfortress:block/wildfire_alter_0"
+    },
+    "charges=1": {
+      "model": "hexfortress:block/wildfire_alter_1"
+    },
+    "charges=2": {
+      "model": "hexfortress:block/wildfire_alter_2"
+    },
+    "charges=3": {
+      "model": "hexfortress:block/wildfire_alter_3"
+    },
+    "charges=4": {
+      "model": "hexfortress:block/wildfire_alter_4"
+    }
+  }
+}

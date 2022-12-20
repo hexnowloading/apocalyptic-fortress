@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "locked=true,activated=true": [
+      {"model": "hexfortress:block/resistance_canceler_locked_activated"}
+    ],
+    "locked=true,activated=false": [
+      {"model": "hexfortress:block/resistance_canceler_locked_deactivated"}
+    ],
+    "locked=false,activated=true": [
+      {"model": "hexfortress:block/resistance_canceler_unlocked_activated"}
+    ],
+    "locked=false,activated=false": [
+      {"model": "hexfortress:block/resistance_canceler_unlocked_deactivated"}
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "stage=0": [
+      { "model": "hexfortress:block/pot_of_greed_0" }
+    ],
+    "stage=1": [
+      { "model": "hexfortress:block/pot_of_greed_1" }
+    ],
+    "stage=2": [
+      { "model": "hexfortress:block/pot_of_greed_2" }
+    ],
+    "stage=3": [
+      { "model": "hexfortress:block/pot_of_greed_3" }
+    ]
+  }
+}

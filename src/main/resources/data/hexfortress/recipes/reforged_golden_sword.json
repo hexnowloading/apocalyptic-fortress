@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "addition": {
+    "item": "hexfortress:crest_of_greed"
+  },
+  "base": {
+    "item": "hexfortress:refined_golden_sword"
+  },
+  "result": {
+    "item": "hexfortress:reforged_golden_sword"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "parent": "hexfortress:obtain_blaze_core",
+  "criteria": {
+    "blaze_scepter": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "hexfortress:blaze_staff"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.hexfortress.obtain_blaze_scepter.description"
+    },
+    "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "item": "hexfortress:blaze_staff"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.hexfortress.obtain_blaze_scepter.title"
+    }
+  },
+  "requirements": [
+    [
+      "blaze_scepter"
+    ]
+  ]
+}

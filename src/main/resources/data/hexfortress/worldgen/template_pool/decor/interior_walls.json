@@ -1,0 +1,186 @@
+{
+  "name": "hexfortress:decor/interior_walls",
+  "fallback": "hexfortress:decor/interior_walls",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "hexfortress:decor/interior_wall/shelf_bottom",
+        "processors": "hexfortress:decor/explosive_barrels_30"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "hexfortress:decor/interior_wall/shelf_bottom",
+        "processors": "hexfortress:decor/pots_30"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "hexfortress:decor/interior_wall/shelf_bottom",
+        "processors": "hexfortress:decor/random_book_pile_less"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "hexfortress:decor/interior_wall/shelf_bottom",
+        "processors": "hexfortress:decor/random_nether_brick_pile_less"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "hexfortress:decor/interior_wall/shelf_top",
+        "processors": "hexfortress:decor/explosive_barrels_30"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "hexfortress:decor/interior_wall/shelf_top",
+        "processors": "hexfortress:decor/pots_30"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "hexfortress:decor/interior_wall/shelf_top",
+        "processors": "hexfortress:decor/random_book_pile_less"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "hexfortress:decor/interior_wall/shelf_top",
+        "processors": "hexfortress:decor/random_nether_brick_pile_less"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "hexfortress:decor/interior_wall/shelf_top",
+        "processors": "hexfortress:decor/random_gold_ingot_pile_less"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "hexfortress:decor/interior_wall/shelf_top_bottom",
+        "processors": "hexfortress:decor/explosive_barrels_30"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "hexfortress:decor/interior_wall/shelf_top_bottom",
+        "processors": "hexfortress:decor/pots_30"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "hexfortress:decor/interior_wall/shelf_top_bottom",
+        "processors": "hexfortress:decor/random_book_pile_less"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "hexfortress:decor/interior_wall/shelf_top_bottom",
+        "processors": "hexfortress:decor/random_nether_brick_pile_less"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "hexfortress:decor/interior_wall/shelf_top_bottom",
+        "processors": "hexfortress:decor/random_gold_ingot_pile_less"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "hexfortress:decor/interior_wall/on_ground",
+        "processors": "hexfortress:decor/explosive_barrels_30"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "hexfortress:decor/interior_wall/on_ground",
+        "processors": "hexfortress:decor/pots_30"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "hexfortress:decor/interior_wall/on_ground",
+        "processors": "hexfortress:decor/random_book_pile_less"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "hexfortress:decor/interior_wall/on_ground",
+        "processors": "hexfortress:decor/random_nether_brick_pile_less"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "hexfortress:decor/interior_wall/on_ground",
+        "processors": "hexfortress:decor/random_gold_ingot_pile_less"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "hexfortress:decor/interior_wall/chest",
+        "processors": "hexfortress:decor/pots_30"
+      }
+    }
+  ]
+}

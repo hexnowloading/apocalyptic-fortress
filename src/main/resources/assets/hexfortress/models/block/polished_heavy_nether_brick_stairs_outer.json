@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "hexfortress:block/polished_heavy_nether_bricks",
+    "side": "hexfortress:block/polished_heavy_nether_bricks",
+    "top": "hexfortress:block/polished_heavy_nether_bricks"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "parent": "hexfortress:obtain_blaze_key",
+  "criteria": {
+    "loot_locked_chest": {
+      "conditions": {
+        "loot_table": "hexfortress:loots/chest/locked"
+      },
+      "trigger": "minecraft:player_generates_container_loot"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.hexfortress.loot_locked_chest.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "hexfortress:locked_chest"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.hexfortress.loot_locked_chest.title"
+    }
+  },
+  "requirements": [
+    [
+      "loot_locked_chest"
+    ]
+  ]
+}

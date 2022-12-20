@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " #Y",
+    "#X#",
+    "Y# "
+  ],
+  "key": {
+    "#": {
+      "item": "hexfortress:wither_petal"
+    },
+    "X": {
+      "item": "minecraft:netherite_scrap"
+    },
+    "Y": {
+      "item": "hexfortress:wither_skull_fragment"
+    }
+  },
+  "result": {
+    "count": 1,
+    "item": "hexfortress:witherite_bone"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "hexfortress:mixed_soul_sand_nether_tiles_heavy"
+        }
+      ]
+    }
+  ]
+}

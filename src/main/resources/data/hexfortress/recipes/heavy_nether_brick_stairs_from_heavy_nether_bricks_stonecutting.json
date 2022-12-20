@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "hexfortress:heavy_nether_bricks"
+  },
+  "result": "hexfortress:heavy_nether_brick_stairs"
+}

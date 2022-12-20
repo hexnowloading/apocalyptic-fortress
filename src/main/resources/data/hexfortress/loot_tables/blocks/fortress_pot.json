@@ -1,0 +1,29 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "weight": 500,
+          "name": "hexfortress:loots/pot/common"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "weight": 50,
+          "name": "hexfortress:loots/pot/uncommon"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "weight": 10,
+          "name": "hexfortress:loots/pot/rare"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "weight": 1,
+          "name": "hexfortress:loots/pot/legendary"
+        }
+      ]
+    }
+  ]
+}

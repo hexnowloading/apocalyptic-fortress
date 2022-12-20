@@ -1,0 +1,15 @@
+{
+  "name": "hexfortress:interior_island_boss_spawner",
+  "fallback": "hexfortress:interior_island_boss_spawner",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "hexfortress:interior/island/boss_spawner",
+        "processors": "minecraft:empty"
+      }
+    }
+  ]
+}

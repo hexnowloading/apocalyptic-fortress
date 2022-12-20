@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "hexfortress:nether_tiles"
+  },
+  "result": "hexfortress:nether_tile_slab"
+}

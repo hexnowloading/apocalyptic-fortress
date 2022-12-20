@@ -1,0 +1,37 @@
+{
+  "parent": "hexfortress:obtain_witherite_shears",
+  "criteria": {
+    "wither_petal": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "hexfortress:wither_petal"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.hexfortress.obtain_wither_petal.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "hexfortress:wither_petal"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.hexfortress.obtain_wither_petal.title"
+    }
+  },
+  "requirements": [
+    [
+      "wither_petal"
+    ]
+  ]
+}

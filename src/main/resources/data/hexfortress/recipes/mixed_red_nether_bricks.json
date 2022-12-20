@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "X#X",
+    "#X#",
+    "X#X"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:nether_bricks"
+    },
+    "X": {
+      "item": "minecraft:red_nether_bricks"
+    }
+  },
+  "result": {
+    "count": 9,
+    "item": "hexfortress:mixed_red_nether_bricks"
+  }
+}

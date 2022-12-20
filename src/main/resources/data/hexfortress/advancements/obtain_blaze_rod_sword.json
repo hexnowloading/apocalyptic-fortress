@@ -1,0 +1,37 @@
+{
+  "parent": "hexfortress:obtain_blaze_core",
+  "criteria": {
+    "blaze_rod_sword": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "hexfortress:blaze_rod_sword"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.hexfortress.obtain_blaze_rod_sword.description"
+    },
+    "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "item": "hexfortress:blaze_rod_sword"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.hexfortress.obtain_blaze_rod_sword.title"
+    }
+  },
+  "requirements": [
+    [
+      "blaze_rod_sword"
+    ]
+  ]
+}

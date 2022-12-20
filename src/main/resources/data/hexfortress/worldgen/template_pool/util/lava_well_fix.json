@@ -1,0 +1,15 @@
+{
+  "name": "hexfortress:util/lava_well_fix",
+  "fallback": "hexfortress:util/lava_well_fix",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "hexfortress:util/lava_well_fix",
+        "processors": "minecraft:empty"
+      }
+    }
+  ]
+}

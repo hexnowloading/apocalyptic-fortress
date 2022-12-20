@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "hexfortress:block/polished_heavy_nether_bricks"
+  }
+}

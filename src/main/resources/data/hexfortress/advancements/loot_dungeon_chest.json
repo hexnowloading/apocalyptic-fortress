@@ -1,0 +1,31 @@
+{
+  "parent": "hexfortress:root",
+  "criteria": {
+    "loot_dungeon_chest": {
+      "conditions": {
+        "loot_table": "hexfortress:loots/chest/common"
+      },
+      "trigger": "minecraft:player_generates_container_loot"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.hexfortress.loot_dungeon_chest.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "hexfortress:dungeon_chest"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.hexfortress.loot_dungeon_chest.title"
+    }
+  },
+  "requirements": [
+    [
+      "loot_dungeon_chest"
+    ]
+  ]
+}

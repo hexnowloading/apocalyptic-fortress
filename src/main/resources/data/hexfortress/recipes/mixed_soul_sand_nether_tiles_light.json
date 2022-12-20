@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "X#X",
+    "#X#",
+    "X#X"
+  ],
+  "key": {
+    "X": {
+      "item": "hexfortress:nether_tiles"
+    },
+    "#": {
+      "item": "minecraft:soul_sand"
+    }
+  },
+  "result": {
+    "count": 9,
+    "item": "hexfortress:mixed_soul_sand_nether_tiles_light"
+  }
+}
