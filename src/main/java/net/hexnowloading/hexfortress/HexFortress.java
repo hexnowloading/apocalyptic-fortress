@@ -1,6 +1,8 @@
 package net.hexnowloading.hexfortress;
 
 import com.mojang.logging.LogUtils;
+import net.hexnowloading.hexfortress.config.HFClientConfigs;
+import net.hexnowloading.hexfortress.config.HFCommonConfigs;
 import net.hexnowloading.hexfortress.registry.*;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -10,7 +12,9 @@ import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.CreativeModeTabEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.RegistryObject;
@@ -43,6 +47,10 @@ public class HexFortress {
         HFEntityTypes.ENTITY_TYPES.register(eventBus);
         HFMenuTypes.MENU_TYPES.register(eventBus);
         HFStructureTypes.STRUCTURE_TYPES.register(eventBus);
+
+        ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, HFClientConfigs.SPEC, "apocalyptic-fortress-mod-client.toml");
+        ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, HFCommonConfigs.SPEC, "apocalyptic-fortress-mod-common.toml");
+
         MinecraftForge.EVENT_BUS.register(this);
     }
 

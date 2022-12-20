@@ -1,5 +1,6 @@
 package net.hexnowloading.hexfortress.block;
 
+import net.hexnowloading.hexfortress.config.HFCommonConfigs;
 import net.hexnowloading.hexfortress.registry.HFBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
@@ -92,7 +93,11 @@ public class ExplosiveBarrelBlock extends FallingBlock implements SimpleWaterlog
             level.addFreshEntity(areaEffectCloud);
         }
         level.removeBlock(pos, false);
-        level.explode((Entity)null, pos.getX(), pos.getY() + 0.5D, pos.getZ(), 4.0F, Level.ExplosionInteraction.TNT);
+        if (HFCommonConfigs.DESTRUCTIVE_BARREL.get()) {
+            level.explode((Entity)null, pos.getX(), pos.getY() + 0.5D, pos.getZ(), 4.0F, Level.ExplosionInteraction.TNT);
+        } else {
+            level.explode((Entity)null, pos.getX(), pos.getY() + 0.5D, pos.getZ(), 4.0F, Level.ExplosionInteraction.NONE);
+        }
     }
 
     @Override
