@@ -22,7 +22,6 @@ public class WildfireModel<T extends WildfireEntity> extends HierarchicalModel<T
 	private final ModelPart rod2;
 	private final ModelPart rod3;
 	private final ModelPart rod4;
-	private final ModelPart core;
 	private final ModelPart lower_rods;
 	private final ModelPart lower_rod1;
 	private final ModelPart lower_rod2;
@@ -42,46 +41,65 @@ public class WildfireModel<T extends WildfireEntity> extends HierarchicalModel<T
 		this.lower_rod2 = this.lower_rods.getChild("lower_rod2");
 		this.lower_rod3 = this.lower_rods.getChild("lower_rod3");
 		this.lower_rod4 = this.lower_rods.getChild("lower_rod4");
-
-		this.core = root.getChild("core");
 	}
 
 	public static LayerDefinition createBodyLayer() {
 		MeshDefinition meshdefinition = new MeshDefinition();
 		PartDefinition partdefinition = meshdefinition.getRoot();
 
-		PartDefinition head = partdefinition.addOrReplaceChild("head", CubeListBuilder.create().texOffs(0, 0).addBox(-4.0F, -10.0F, -4.0F, 8.0F, 8.0F, 8.0F, new CubeDeformation(0.0F))
-				.texOffs(28, 24).mirror().addBox(-4.5F, -22.0F, -4.5F, 9.0F, 22.0F, 9.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offset(0.0F, 1.0F, 0.0F));
+		PartDefinition head = partdefinition.addOrReplaceChild("head", CubeListBuilder.create().texOffs(32, 19).addBox(-4.0F, -9.0F, -4.0F, 8.0F, 8.0F, 8.0F, new CubeDeformation(0.0F))
+				.texOffs(0, 27).addBox(-4.5F, -16.5F, -4.5F, 9.0F, 18.0F, 9.0F, new CubeDeformation(0.0F))
+				.texOffs(0, 0).addBox(-5.0F, -17.0F, -5.0F, 10.0F, 17.0F, 10.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 1.0F, 0.0F));
 
-		PartDefinition rods = partdefinition.addOrReplaceChild("rods", CubeListBuilder.create(), PartPose.offset(0.0F, 24.0F, 0.0F));
+		PartDefinition rods = partdefinition.addOrReplaceChild("rods", CubeListBuilder.create(), PartPose.offset(0.0F, 26.0F, 0.0F));
 
-		PartDefinition rod1 = rods.addOrReplaceChild("rod1", CubeListBuilder.create().texOffs(16, 16).addBox(-9.2933F, -4.2961F, -2.0F, 11.0F, 4.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(7.75F, -14.0F, 0.0F, 0.0F, 0.0F, 1.1781F));
+		PartDefinition rod1 = rods.addOrReplaceChild("rod1", CubeListBuilder.create().texOffs(30, 0).addBox(-8.3694F, -3.9134F, -2.0F, 11.0F, 4.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(7.75F, -14.0F, 0.0F, 0.0F, 0.0F, 1.1781F));
 
-		PartDefinition ring_r1 = rod1.addOrReplaceChild("ring_r1", CubeListBuilder.create().texOffs(0, 16).addBox(4.0F, -5.2961F, -7.5433F, 6.0F, 6.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-0.75F, 0.0F, 7.0F, 0.0F, 1.5708F, 0.0F));
+		PartDefinition cube_r1 = rod1.addOrReplaceChild("cube_r1", CubeListBuilder.create().texOffs(0, 0).addBox(8.0F, -5.9134F, -6.6194F, 0.0F, 8.0F, 2.0F, new CubeDeformation(0.0F))
+				.texOffs(0, 0).addBox(6.0F, -5.9134F, -6.6194F, 0.0F, 8.0F, 2.0F, new CubeDeformation(0.0F))
+				.texOffs(28, 8).addBox(3.0F, -0.9134F, -6.6194F, 8.0F, 0.0F, 2.0F, new CubeDeformation(0.0F))
+				.texOffs(28, 8).addBox(3.0F, -2.9134F, -6.6194F, 8.0F, 0.0F, 2.0F, new CubeDeformation(0.0F))
+				.texOffs(36, 35).addBox(4.0F, -4.9134F, -6.6194F, 6.0F, 6.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-0.75F, 0.0F, 7.0F, 0.0F, 1.5708F, 0.0F));
 
-		PartDefinition rod2 = rods.addOrReplaceChild("rod2", CubeListBuilder.create().texOffs(16, 16).addBox(-9.2933F, -4.2961F, -2.0F, 11.0F, 4.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-0.25F, -14.0F, -8.0F, 1.5708F, 0.3927F, 1.5708F));
+		PartDefinition rod2 = rods.addOrReplaceChild("rod2", CubeListBuilder.create().texOffs(30, 0).addBox(-8.3694F, -3.9134F, -2.0F, 11.0F, 4.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-0.25F, -14.0F, -8.0F, 1.5708F, 0.3927F, 1.5708F));
 
-		PartDefinition ring_r2 = rod2.addOrReplaceChild("ring_r2", CubeListBuilder.create().texOffs(0, 16).addBox(4.0F, -5.2961F, -7.5433F, 6.0F, 6.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-0.75F, 0.0F, 7.0F, 0.0F, 1.5708F, 0.0F));
+		PartDefinition cube_r2 = rod2.addOrReplaceChild("cube_r2", CubeListBuilder.create().texOffs(0, 25).addBox(6.0F, -5.9134F, -6.6194F, 0.0F, 8.0F, 2.0F, new CubeDeformation(0.0F))
+				.texOffs(0, 25).addBox(8.0F, -5.9134F, -6.6194F, 0.0F, 8.0F, 2.0F, new CubeDeformation(0.0F))
+				.texOffs(28, 8).addBox(3.0F, -0.9134F, -6.6194F, 8.0F, 0.0F, 2.0F, new CubeDeformation(0.0F))
+				.texOffs(28, 8).addBox(3.0F, -2.9134F, -6.6194F, 8.0F, 0.0F, 2.0F, new CubeDeformation(0.0F))
+				.texOffs(36, 35).addBox(4.0F, -4.9134F, -6.6194F, 6.0F, 6.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-0.75F, 0.0F, 7.0F, 0.0F, 1.5708F, 0.0F));
 
-		PartDefinition rod3 = rods.addOrReplaceChild("rod3", CubeListBuilder.create().texOffs(16, 16).addBox(-9.2933F, -4.2961F, -2.0F, 11.0F, 4.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-8.25F, -14.0F, 0.0F, 3.1416F, 0.0F, 1.9635F));
+		PartDefinition rod3 = rods.addOrReplaceChild("rod3", CubeListBuilder.create().texOffs(30, 0).addBox(-8.3694F, -3.9134F, -2.0F, 11.0F, 4.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-8.25F, -14.0F, 0.0F, 3.1416F, 0.0F, 1.9635F));
 
-		PartDefinition cube_r1 = rod3.addOrReplaceChild("cube_r1", CubeListBuilder.create().texOffs(0, 16).addBox(4.0F, -5.2961F, -7.5433F, 6.0F, 6.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-0.75F, 0.0F, 7.0F, 0.0F, 1.5708F, 0.0F));
+		PartDefinition cube_r3 = rod3.addOrReplaceChild("cube_r3", CubeListBuilder.create().texOffs(0, 0).addBox(6.0F, -5.9134F, -6.6194F, 0.0F, 8.0F, 2.0F, new CubeDeformation(0.0F))
+				.texOffs(0, 0).addBox(8.0F, -5.9134F, -6.6194F, 0.0F, 8.0F, 2.0F, new CubeDeformation(0.0F))
+				.texOffs(28, 8).addBox(3.0F, -0.9134F, -6.6194F, 8.0F, 0.0F, 2.0F, new CubeDeformation(0.0F))
+				.texOffs(28, 8).addBox(3.0F, -2.9134F, -6.6194F, 8.0F, 0.0F, 2.0F, new CubeDeformation(0.0F))
+				.texOffs(36, 35).addBox(4.0F, -4.9134F, -6.6194F, 6.0F, 6.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-0.75F, 0.0F, 7.0F, 0.0F, 1.5708F, 0.0F));
 
-		PartDefinition rod4 = rods.addOrReplaceChild("rod4", CubeListBuilder.create().texOffs(16, 16).addBox(-9.2933F, -4.2961F, -2.0F, 11.0F, 4.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-0.25F, -14.0F, 8.0F, -1.5708F, -0.3927F, 1.5708F));
+		PartDefinition rod4 = rods.addOrReplaceChild("rod4", CubeListBuilder.create().texOffs(30, 0).addBox(-8.3694F, -3.9134F, -2.0F, 11.0F, 4.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-0.25F, -14.0F, 8.0F, -1.5708F, -0.3927F, 1.5708F));
 
-		PartDefinition cube_r2 = rod4.addOrReplaceChild("cube_r2", CubeListBuilder.create().texOffs(0, 16).addBox(4.0F, -5.2961F, -7.5433F, 6.0F, 6.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-0.75F, 0.0F, 7.0F, 0.0F, 1.5708F, 0.0F));
+		PartDefinition cube_r4 = rod4.addOrReplaceChild("cube_r4", CubeListBuilder.create().texOffs(0, 0).addBox(8.0F, -5.9134F, -6.6194F, 0.0F, 8.0F, 2.0F, new CubeDeformation(0.0F))
+				.texOffs(0, 0).addBox(6.0F, -5.9134F, -6.6194F, 0.0F, 8.0F, 2.0F, new CubeDeformation(0.0F))
+				.texOffs(28, 8).addBox(3.0F, -0.9134F, -6.6194F, 8.0F, 0.0F, 2.0F, new CubeDeformation(0.0F))
+				.texOffs(28, 8).addBox(3.0F, -2.9134F, -6.6194F, 8.0F, 0.0F, 2.0F, new CubeDeformation(0.0F))
+				.texOffs(36, 35).addBox(4.0F, -4.9134F, -6.6194F, 6.0F, 6.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-0.75F, 0.0F, 7.0F, 0.0F, 1.5708F, 0.0F));
 
-		PartDefinition core = partdefinition.addOrReplaceChild("core", CubeListBuilder.create().texOffs(0, 24).addBox(-3.0F, -1.0F, 1.0F, 2.0F, 18.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(2.0F, 4.0F, -2.0F));
+		PartDefinition lower_rods = partdefinition.addOrReplaceChild("lower_rods", CubeListBuilder.create(), PartPose.offset(0.0F, 24.0F, 0.0F));
 
-		PartDefinition lower_rods = partdefinition.addOrReplaceChild("lower_rods", CubeListBuilder.create(), PartPose.offset(0.0F, 4.0F, 0.0F));
+		PartDefinition lower_rod1 = lower_rods.addOrReplaceChild("lower_rod1", CubeListBuilder.create(), PartPose.offset(0.0F, 0.0F, 0.0F));
 
-		PartDefinition lower_rod1 = lower_rods.addOrReplaceChild("lower_rod1", CubeListBuilder.create().texOffs(8, 24).addBox(3.0F, 5.0F, -1.0F, 2.0F, 10.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.0F, 0.0F));
+		PartDefinition lower_rod_r1 = lower_rod1.addOrReplaceChild("lower_rod_r1", CubeListBuilder.create().texOffs(36, 43).addBox(-1.0F, -5.0F, -1.0F, 2.0F, 10.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(4.0F, -8.0F, 0.0F, 0.0F, -1.5708F, 0.0F));
 
-		PartDefinition lower_rod2 = lower_rods.addOrReplaceChild("lower_rod2", CubeListBuilder.create().texOffs(8, 24).addBox(-1.0F, -15.0F, -5.0F, 2.0F, 10.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.0F, 0.0F));
+		PartDefinition lower_rod2 = lower_rods.addOrReplaceChild("lower_rod2", CubeListBuilder.create().texOffs(36, 43).addBox(-1.0F, -13.0F, -5.0F, 2.0F, 10.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.0F, 0.0F));
 
-		PartDefinition lower_rod3 = lower_rods.addOrReplaceChild("lower_rod3", CubeListBuilder.create().texOffs(8, 24).addBox(-5.0F, 5.0F, -1.0F, 2.0F, 10.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.0F, 0.0F));
+		PartDefinition lower_rod3 = lower_rods.addOrReplaceChild("lower_rod3", CubeListBuilder.create(), PartPose.offset(0.0F, 0.0F, 0.0F));
 
-		PartDefinition lower_rod4 = lower_rods.addOrReplaceChild("lower_rod4", CubeListBuilder.create().texOffs(8, 24).addBox(-1.0F, -15.0F, 3.0F, 2.0F, 10.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.0F, 0.0F));
+		PartDefinition lower_rod_r2 = lower_rod3.addOrReplaceChild("lower_rod_r2", CubeListBuilder.create().texOffs(36, 43).addBox(-1.0F, -5.0F, -1.0F, 2.0F, 10.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-4.0F, -8.0F, 0.0F, 0.0F, 1.5708F, 0.0F));
+
+		PartDefinition lower_rod4 = lower_rods.addOrReplaceChild("lower_rod4", CubeListBuilder.create(), PartPose.offset(0.0F, 0.0F, 0.0F));
+
+		PartDefinition lower_rod_r3 = lower_rod4.addOrReplaceChild("lower_rod_r3", CubeListBuilder.create().texOffs(36, 43).addBox(-1.0F, -5.0F, -1.0F, 2.0F, 10.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -8.0F, 4.0F, 0.0F, 3.1416F, 0.0F));
 
 		return LayerDefinition.create(meshdefinition, 64, 64);
 	}
@@ -146,9 +164,9 @@ public class WildfireModel<T extends WildfireEntity> extends HierarchicalModel<T
 
 		this.lower_rods.yRot = f;
 		this.lower_rods.y = f1;
-		this.lower_rod1.y = r1;
+		this.lower_rod1.y = r1 + 20.0F;
 		this.lower_rod2.y = r2 + 20.0F;
-		this.lower_rod3.y = r1;
+		this.lower_rod3.y = r1 + 20.0F;
 		this.lower_rod4.y = r2 + 20.0F;
 	}
 
@@ -163,10 +181,9 @@ public class WildfireModel<T extends WildfireEntity> extends HierarchicalModel<T
 	@Override
 	public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
 		poseStack.scale(1.5F, 1.5F, 1.5F);
-		poseStack.translate(0.0F, -0.25F, 0.0F);
+		poseStack.translate(0.0F, -0.5F, 0.0F);
 		head.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
 		rods.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
-		//core.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
 		lower_rods.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
 	}
 

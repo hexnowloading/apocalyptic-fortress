@@ -270,7 +270,7 @@ public class FortressWalkerModel<T extends FortressWalkerEntity> extends Hierarc
 	@Override
 	public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
 		this.root().getAllParts().forEach(ModelPart::resetPose);
-		float f = Math.min((float)entity.getDeltaMovement().lengthSqr() * 200.0F, 8.0F);
+		float f = Math.min((float)entity.getDeltaMovement().lengthSqr() * 200.0F, 2.0F);
 		this.animate(entity.compactAnimationState, FortressWalkerAnimation.FORTRESS_WALKER_COMPACT, ageInTicks);
 		this.animate(entity.wakeUpAnimationState, FortressWalkerAnimation.FORTRESS_WALKER_WAKEUP, ageInTicks);
 		this.animate(entity.idleAnimationState, FortressWalkerAnimation.FORTRESS_WALKER_IDLE, ageInTicks);

@@ -1,5 +1,6 @@
 package net.hexnowloading.hexfortress.entity;
 
+import net.hexnowloading.hexfortress.entity.ai.GroundPathNavigationWide;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -8,6 +9,7 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.ai.goal.FloatGoal;
 import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
 import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
@@ -47,11 +49,12 @@ public class FortressWalkerEntity extends Monster {
 
     @Override
     protected void registerGoals() {
+        this.goalSelector.addGoal(0, new FloatGoal(this));
         this.goalSelector.addGoal(1, new FortressWalkerMeleeAttackGoal());
-        this.goalSelector.addGoal(2, new RandomLookAroundGoal(this));
-        this.goalSelector.addGoal(3, new LookAtPlayerGoal(this, Player.class, 8.0F));
+        //this.goalSelector.addGoal(2, new LookAtPlayerGoal(this, Player.class, 8.0F));
+        //this.goalSelector.addGoal(3, new RandomLookAroundGoal(this));
         this.targetSelector.addGoal(1, (new HurtByTargetGoal(this)));
-        this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, true));
+        this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Player.class, 20, true, true, null));
     }
 
     @Override
@@ -62,7 +65,7 @@ public class FortressWalkerEntity extends Monster {
 
     @Override
     protected PathNavigation createNavigation(Level level) {
-        return new FortressWalkerNavigation(this, level);
+        return new GroundPathNavigationWide(this, level,0.75F);
     }
 
     private boolean isCompact() { return this.entityData.get(COMPACT); }
@@ -81,6 +84,11 @@ public class FortressWalkerEntity extends Monster {
             setCompact(false);
         }
         return super.hurt(damageSource, damage);
+    }
+
+    @Override
+    public boolean canBeCollidedWith() {
+        return this.isAlive();
     }
 
     @Override
@@ -108,7 +116,7 @@ public class FortressWalkerEntity extends Monster {
 
         @Override
         protected double getAttackReachSqr(LivingEntity livingEntity) {
-            float f = FortressWalkerEntity.this.getBbWidth() - 3.1F;
+            float f = FortressWalkerEntity.this.getBbWidth() - 2.6F;
             return (double)(f *2.0F*f*2.0F + livingEntity.getBbWidth());
         }
     }
