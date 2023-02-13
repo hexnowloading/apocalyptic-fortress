@@ -182,7 +182,7 @@ public class PotOfGreedBlock extends BaseEntityBlock {
                             increaseStage(state, level, pos);
                         }
                     } else {
-                        playSound(level, pos, SoundEvents.NOTE_BLOCK_BASS.get());
+                        playSound(level, pos, SoundEvents.NOTE_BLOCK_BASS);
                     }
                     player.displayClientMessage(Component.translatable("warning.hexfortress.pot_of_greed_remaining_items", REQUIRED_ITEMS.size() - potOfGreedBlockEntity.getItems().size()), true);
                 } else if (itemStack.is(Items.ENCHANTED_GOLDEN_APPLE)) {
@@ -192,7 +192,7 @@ public class PotOfGreedBlock extends BaseEntityBlock {
                     spawnReward(level, state, pos);
                     increaseStage(state, level, pos);
                 } else {
-                    playSound(level, pos, SoundEvents.NOTE_BLOCK_BASS.get());
+                    playSound(level, pos, SoundEvents.NOTE_BLOCK_BASS);
                     player.displayClientMessage(Component.translatable("warning.hexfortress.pot_of_greed_remaining_items", REQUIRED_ITEMS.size() - potOfGreedBlockEntity.getItems().size()), true);
                 }
                 return InteractionResult.CONSUME;

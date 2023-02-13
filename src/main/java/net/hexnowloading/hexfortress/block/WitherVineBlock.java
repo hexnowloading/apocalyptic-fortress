@@ -74,11 +74,6 @@ public class WitherVineBlock extends MultifaceBlock implements BonemealableBlock
         });
     }
 
-    @Override
-    public boolean isValidBonemealTarget(LevelReader levelReader, BlockPos pos, BlockState state, boolean b) {
-        return true;
-    }
-
     public boolean isBonemealSuccess(Level level, RandomSource randomSource, BlockPos pos, BlockState state) {
         return true;
     }

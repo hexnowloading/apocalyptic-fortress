@@ -94,9 +94,9 @@ public class ExplosiveBarrelBlock extends FallingBlock implements SimpleWaterlog
         }
         level.removeBlock(pos, false);
         if (HFCommonConfigs.DESTRUCTIVE_BARREL.get()) {
-            level.explode((Entity)null, pos.getX(), pos.getY() + 0.5D, pos.getZ(), 4.0F, Level.ExplosionInteraction.TNT);
+            level.explode((Entity)null, pos.getX(), pos.getY() + 0.5D, pos.getZ(), 4.0F, Explosion.BlockInteraction.DESTROY);
         } else {
-            level.explode((Entity)null, pos.getX(), pos.getY() + 0.5D, pos.getZ(), 4.0F, Level.ExplosionInteraction.NONE);
+            level.explode((Entity)null, pos.getX(), pos.getY() + 0.5D, pos.getZ(), 4.0F, Explosion.BlockInteraction.NONE);
         }
     }
 

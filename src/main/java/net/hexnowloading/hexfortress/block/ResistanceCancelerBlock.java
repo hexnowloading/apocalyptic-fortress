@@ -169,7 +169,7 @@ public class ResistanceCancelerBlock extends BaseEntityBlock implements EntityBl
                         return InteractionResult.CONSUME;
                     } else {
                         player.displayClientMessage(Component.translatable("warning.hexfortress.locked_resistance_canceler"), true);
-                        playSound(level, pos, state, SoundEvents.NOTE_BLOCK_BASS.get());
+                        playSound(level, pos, state, SoundEvents.NOTE_BLOCK_BASS);
                     }
                 } else {
                     if (state.getValue(HFProperties.ACTIVATED)) {

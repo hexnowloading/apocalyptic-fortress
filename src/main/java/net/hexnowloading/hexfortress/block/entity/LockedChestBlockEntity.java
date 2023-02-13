@@ -1,25 +1,28 @@
 package net.hexnowloading.hexfortress.block.entity;
 
+import net.hexnowloading.hexfortress.block.property.ChestState;
+import net.hexnowloading.hexfortress.block.property.LockedState;
 import net.hexnowloading.hexfortress.registry.HFBlockEntities;
+import net.hexnowloading.hexfortress.registry.HFProperties;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
-import software.bernie.geckolib.animatable.GeoBlockEntity;
-import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
-import software.bernie.geckolib.core.animation.AnimatableManager;
-import software.bernie.geckolib.core.animation.AnimationController;
-import software.bernie.geckolib.core.animation.RawAnimation;
-import software.bernie.geckolib.core.object.PlayState;
-import software.bernie.geckolib.util.GeckoLibUtil;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import software.bernie.geckolib3.core.IAnimatable;
+import software.bernie.geckolib3.core.PlayState;
+import software.bernie.geckolib3.core.builder.AnimationBuilder;
+import software.bernie.geckolib3.core.controller.AnimationController;
+import software.bernie.geckolib3.core.easing.EasingType;
+import software.bernie.geckolib3.core.manager.AnimationData;
+import software.bernie.geckolib3.core.manager.AnimationFactory;
 
-public class LockedChestBlockEntity extends BlockEntity implements GeoBlockEntity {
+public class LockedChestBlockEntity extends BlockEntity implements IAnimatable {
     public static final String LOOT_TABLE_TAG = "LootTable";
     public static final String LOOT_TABLE_SEED_TAG = "LootTableSeed";
     protected ResourceLocation lootTable;
     protected long lootTableSeed;
-    private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
     public LockedChestBlockEntity(BlockPos pos, BlockState state) {
         super(HFBlockEntities.LOCKED_CHEST.get(), pos, state);
     }
@@ -60,17 +63,22 @@ public class LockedChestBlockEntity extends BlockEntity implements GeoBlockEntit
         }
     }
 
-    public static final RawAnimation CLOSED = RawAnimation.begin().thenPlay("closed");
+    public static final AnimationBuilder CLOSED = new AnimationBuilder().addAnimation("closed", false);
+    private final AnimationFactory factory = new AnimationFactory(this);
+    private static final String CONTROLLER_NAME = "chestController";
 
     @Override
-    public void registerControllers(AnimatableManager.ControllerRegistrar data) {
-        data.add(new AnimationController<>(this, state -> {
-            return state.setAndContinue(CLOSED);
-        }));
+    public void registerControllers (AnimationData data) {
+        AnimationController controller = new AnimationController(this, CONTROLLER_NAME, 7, animationEvent -> {
+            animationEvent.getController().easingType = EasingType.EaseOutSine;
+            animationEvent.getController().setAnimation(CLOSED);
+            return PlayState.CONTINUE;
+        });
+        data.addAnimationController(controller);
     }
 
     @Override
-    public AnimatableInstanceCache getAnimatableInstanceCache() {
-        return this.cache;
+    public AnimationFactory getFactory () {
+        return factory;
     }
 }

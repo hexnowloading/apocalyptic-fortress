@@ -1,5 +1,7 @@
 package net.hexnowloading.hexfortress.item;
 
+import com.mojang.math.Quaternion;
+import com.mojang.math.Vector3f;
 import net.hexnowloading.hexfortress.entity.projectile.FirestormFireballEntity;
 import net.hexnowloading.hexfortress.registry.HFItems;
 import net.minecraft.ChatFormatting;
@@ -20,8 +22,6 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.Nullable;
-import org.joml.Quaternionf;
-import org.joml.Vector3f;
 
 import java.util.List;
 
@@ -76,9 +76,16 @@ public class FirestormStaffItem extends Item {
     private static void shootProjectile(Level level, Player player, float angle) {
         if (!level.isClientSide) {
             Vec3 vec31 = player.getUpVector(1.0F);
-            Quaternionf quaternionf = (new Quaternionf()).setAngleAxis((double)(angle * ((float)Math.PI / 180F)), vec31.x, vec31.y, vec31.z);
+
+            // Quaternionf quaternionf = (new Quaternionf()).setAngleAxis((double)(angle * ((float)Math.PI / 180F)), vec31.x, vec31.y, vec31.z);
+            Quaternion quaternion = new Quaternion(new Vector3f(vec31), angle, true);
+
             Vec3 vec3 = player.getViewVector(1.0F);
-            Vector3f vector3f = vec3.toVector3f().rotate(quaternionf);
+
+            //Vector3f vector3f = vec3.toVector3f().rotate(quaternionf);
+            Vector3f vector3f = new Vector3f(vec3);
+            vector3f.transform(quaternion);
+
             FirestormFireballEntity smallfireball = new FirestormFireballEntity(level, player,(double)vector3f.x(), (double)vector3f.y(), (double)vector3f.z());
             smallfireball.setFireballDamage(6.0F);
             smallfireball.setPos(player.getX(), player.getEyeY() - (double)0.15F, player.getZ());

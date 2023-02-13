@@ -4,14 +4,10 @@ import net.hexnowloading.hexfortress.HexFortress;
 import net.hexnowloading.hexfortress.block.entity.DungeonChestBlockEntity;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.resources.ResourceLocation;
-import software.bernie.geckolib.model.DefaultedBlockGeoModel;
-import software.bernie.geckolib.model.GeoModel;
+import software.bernie.geckolib3.model.AnimatedGeoModel;
 
 
-public class DungeonChestBlockModel extends DefaultedBlockGeoModel<DungeonChestBlockEntity> {
-    public DungeonChestBlockModel() {
-        super(new ResourceLocation(HexFortress.MODID, "dungeon_chest"));
-    }
+public class DungeonChestBlockModel extends AnimatedGeoModel<DungeonChestBlockEntity> {
 
     @Override
     public ResourceLocation getTextureResource(DungeonChestBlockEntity object) {
@@ -26,10 +22,5 @@ public class DungeonChestBlockModel extends DefaultedBlockGeoModel<DungeonChestB
     @Override
     public ResourceLocation getAnimationResource(DungeonChestBlockEntity object) {
         return new ResourceLocation("hexfortress", "animations/dungeon_chest.animation.json");
-    }
-
-    @Override
-    public RenderType getRenderType(DungeonChestBlockEntity animatable, ResourceLocation texture) {
-        return RenderType.entityTranslucent(getTextureResource(animatable));
     }
 }

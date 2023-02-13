@@ -33,20 +33,17 @@ import net.minecraftforge.items.IItemHandlerModifiable;
 import net.minecraftforge.items.wrapper.InvWrapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import software.bernie.geckolib.GeckoLib;
-import software.bernie.geckolib.animatable.GeoBlockEntity;
-import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
-import software.bernie.geckolib.core.animation.AnimatableManager;
-import software.bernie.geckolib.core.animation.AnimationController;
-import software.bernie.geckolib.core.animation.EasingType;
-import software.bernie.geckolib.core.animation.RawAnimation;
-import software.bernie.geckolib.core.object.PlayState;
-import software.bernie.geckolib.util.GeckoLibUtil;
+import software.bernie.geckolib3.core.IAnimatable;
+import software.bernie.geckolib3.core.PlayState;
+import software.bernie.geckolib3.core.builder.AnimationBuilder;
+import software.bernie.geckolib3.core.controller.AnimationController;
+import software.bernie.geckolib3.core.easing.EasingType;
+import software.bernie.geckolib3.core.manager.AnimationData;
+import software.bernie.geckolib3.core.manager.AnimationFactory;
 
-public class DungeonChestBlockEntity extends RandomizableContainerBlockEntity implements MenuProvider, GeoBlockEntity {
+public class DungeonChestBlockEntity extends RandomizableContainerBlockEntity implements MenuProvider, IAnimatable {
     public static final EnumProperty<ChestState> CHEST_STATE = HFProperties.CHEST_STATE;
     private NonNullList<ItemStack> items = NonNullList.withSize(27, ItemStack.EMPTY);
-    private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 
     public DungeonChestBlockEntity(BlockPos pos, BlockState state) {
         super(HFBlockEntities.DUNGEON_CHEST.get(), pos, state);
@@ -195,21 +192,24 @@ public class DungeonChestBlockEntity extends RandomizableContainerBlockEntity im
     // Animation Controls
     //-------------------
 
-    public static final RawAnimation CLOSED = RawAnimation.begin().thenPlay("closed");
-    public static final RawAnimation OPENED = RawAnimation.begin().thenPlay("opened");
+    public static final AnimationBuilder CLOSED = new AnimationBuilder().addAnimation("closed", false);
+    public static final AnimationBuilder OPENED = new AnimationBuilder().addAnimation("opened", false);
     public ChestState getChestState() { return this.getBlockState().getValue(DungeonChestBlockEntity.CHEST_STATE); }
 
+    private static final String CONTROLLER_NAME = "chestController";
+    private final AnimationFactory factory = new AnimationFactory(this);
+
     @Override
-    public void registerControllers(AnimatableManager.ControllerRegistrar data) {
-        AnimationController controller = new AnimationController(this, "controller", 7, animationEvent -> {
+    public void registerControllers (AnimationData data) {
+        AnimationController controller = new AnimationController(this, CONTROLLER_NAME, 7, animationEvent -> {
 
             switch (getChestState()) {
                 case CLOSED:
-                    animationEvent.getController().setOverrideEasingType(EasingType.EASE_OUT_SINE);
+                    animationEvent.getController().easingType = EasingType.EaseOutSine;
                     animationEvent.getController().setAnimation(CLOSED);
                     break;
                 case OPENED:
-                    animationEvent.getController().setOverrideEasingType(EasingType.LINEAR);
+                    animationEvent.getController().easingType = EasingType.Linear;
                     animationEvent.getController().setAnimation(OPENED);
                     break;
                 default:
@@ -217,11 +217,11 @@ public class DungeonChestBlockEntity extends RandomizableContainerBlockEntity im
             }
             return PlayState.CONTINUE;
         });
-        data.add(controller);
+        data.addAnimationController(controller);
     }
 
     @Override
-    public AnimatableInstanceCache getAnimatableInstanceCache() {
-        return this.cache;
+    public AnimationFactory getFactory () {
+        return factory;
     }
 }

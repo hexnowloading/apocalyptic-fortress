@@ -2,12 +2,10 @@ package net.hexnowloading.hexfortress.item.client.model;
 
 import net.hexnowloading.hexfortress.HexFortress;
 import net.hexnowloading.hexfortress.item.LockedChestBlockItem;
-import net.minecraft.client.renderer.RenderType;
 import net.minecraft.resources.ResourceLocation;
-import software.bernie.geckolib.model.DefaultedItemGeoModel;
+import software.bernie.geckolib3.model.AnimatedGeoModel;
 
-public class LockedChestBlockItemModel extends DefaultedItemGeoModel<LockedChestBlockItem> {
-    public LockedChestBlockItemModel() { super(new ResourceLocation(HexFortress.MODID, "locked_chest")); }
+public class LockedChestBlockItemModel extends AnimatedGeoModel<LockedChestBlockItem> {
 
     @Override
     public ResourceLocation getTextureResource(LockedChestBlockItem object) {
@@ -22,10 +20,5 @@ public class LockedChestBlockItemModel extends DefaultedItemGeoModel<LockedChest
     @Override
     public ResourceLocation getAnimationResource(LockedChestBlockItem object) {
         return new ResourceLocation("hexfortress", "animations/locked_chest.animation.json");
-    }
-
-    @Override
-    public RenderType getRenderType(LockedChestBlockItem animatable, ResourceLocation texture) {
-        return RenderType.entityTranslucent(getTextureResource(animatable));
     }
 }
