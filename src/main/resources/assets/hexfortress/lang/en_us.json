@@ -46,7 +46,6 @@
   "warning.hexfortress.pot_of_greed_remaining_items": "Remaining Items: %d",
 
   "item.hexfortress.firestorm_spawn_egg": "Firestorm Spawn Egg",
-  "item.hexfortress.modified_wither_skeleton_spawn_egg": "Wither Skeleton Spawn Egg",
 
   "item.hexfortress.wither_petal": "Wither Petal",
   "item.hexfortress.blaze_key": "Blaze Key",
@@ -127,6 +126,5 @@
   "block.hexfortress.resistance_canceler": "Fortress Beacon",
   "block.hexfortress.pot_of_greed": "Pot of Greed",
 
-  "entity.hexfortress.modified_wither_skeleton": "Wither Skeleton",
   "entity.hexfortress.firestorm": "Firestorm"
 }

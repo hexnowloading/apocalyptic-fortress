@@ -17,9 +17,7 @@ public class HFEntityTypes {
     public static final DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, HexFortress.MODID);
 
     /*CREATURES*/
-    public static final RegistryObject<EntityType<TestEntity>> TEST_ENTITY = ENTITY_TYPES.register("test_entity", () -> EntityType.Builder.of(TestEntity::new, MobCategory.MONSTER).sized(0.3F, 0.3F).build(new ResourceLocation(HexFortress.MODID, "test").toString()));
     public static final RegistryObject<EntityType<FirestormEntity>> FIRESTORM = ENTITY_TYPES.register("firestorm", () -> EntityType.Builder.of(FirestormEntity::new, MobCategory.MONSTER).sized(1.0F, 3.1F).build(new ResourceLocation(HexFortress.MODID, "firestorm").toString()));
-    public static final RegistryObject<EntityType<FortressWalkerEntity>> FORTRESS_WALKER = ENTITY_TYPES.register("fortress_walker", () -> EntityType.Builder.of(FortressWalkerEntity::new, MobCategory.MONSTER).sized(5.0F, 4.8F).build(new ResourceLocation(HexFortress.MODID, "fortress_walker").toString()));
 
     /*PROJECTILES*/
     //public static final RegistryObject<EntityType<StrongerFireballEntity>> STRONGER_FIREBALL = ENTITY_TYPES.register("stronger_fireball", () -> EntityType.Builder.of(StrongerFireballEntity::new, MobCategory.MISC).sized(0.3125F, 0.3125F).clientTrackingRange(4).updateInterval(10));

@@ -1,5 +1,6 @@
 package net.hexnowloading.hexfortress.block.entity;
 
+import net.hexnowloading.hexfortress.block.DungeonChestBlock;
 import net.hexnowloading.hexfortress.block.property.ChestState;
 import net.hexnowloading.hexfortress.registry.HFBlockEntities;
 import net.hexnowloading.hexfortress.registry.HFProperties;
@@ -29,6 +30,7 @@ import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.IItemHandlerModifiable;
+import net.minecraftforge.items.wrapper.InvWrapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.GeckoLib;
@@ -89,10 +91,20 @@ public class DungeonChestBlockEntity extends RandomizableContainerBlockEntity im
     public @NotNull <T> LazyOptional<T> getCapability(@NotNull Capability<T> cap, @Nullable Direction side) {
         if (!this.remove && cap == ForgeCapabilities.ITEM_HANDLER) {
             if (this.chestHandler == null) {
-                return this.chestHandler.cast();
+                this.chestHandler = LazyOptional.of(this::createHandler);
             }
+            return this.chestHandler.cast();
         }
         return super.getCapability(cap, side);
+    }
+
+    private IItemHandlerModifiable createHandler() {
+        BlockState state = this.getBlockState();
+        if (!(state.getBlock() instanceof DungeonChestBlock)) {
+            return new InvWrapper(this);
+        }
+        Container inv = DungeonChestBlock.getContainer((DungeonChestBlock) state.getBlock());
+        return new InvWrapper(inv == null ? this : inv);
     }
 
     // Saves the nbt when player leaves the world.

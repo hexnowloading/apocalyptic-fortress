@@ -1,5 +1,6 @@
 package net.hexnowloading.hexfortress.mixin;
 
+import net.hexnowloading.hexfortress.config.HFCommonConfigs;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -16,10 +17,14 @@ public class WitherSkeletonMixin {
     @Inject(method = "Lnet/minecraft/world/entity/monster/WitherSkeleton;populateDefaultEquipmentEnchantments(Lnet/minecraft/util/RandomSource;Lnet/minecraft/world/DifficultyInstance;)V", at = @At("HEAD"))
     public void populateDefaultEquipmentSlots(RandomSource randomSource, DifficultyInstance difficultyInstance, CallbackInfo ci) {
         WitherSkeleton witherSkeleton = (WitherSkeleton) (Object) this;
-        if (randomSource.nextFloat() < 0.40F) {
-            witherSkeleton.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(Items.STONE_SWORD));
+        if (HFCommonConfigs.WITHER_SKELETON_BOW.get()) {
+            if (randomSource.nextFloat() < 0.40F) {
+                witherSkeleton.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(Items.STONE_SWORD));
+            } else {
+                witherSkeleton.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(Items.BOW));
+            }
         } else {
-            witherSkeleton.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(Items.BOW));
+            witherSkeleton.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(Items.STONE_SWORD));
         }
     }
 }

@@ -116,6 +116,10 @@ public class DungeonChestBlock extends BaseEntityBlock implements SimpleWaterlog
         return blockGetter.getBlockState(blockPos).isRedstoneConductor(blockGetter, blockPos);
     }
 
+    public static Container getContainer(DungeonChestBlock dungeonChestBlock) {
+        return (Container) dungeonChestBlock;
+    }
+
     @Override
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
         if (!level.isClientSide) {
