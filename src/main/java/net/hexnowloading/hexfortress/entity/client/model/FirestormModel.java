@@ -3,8 +3,8 @@ package net.hexnowloading.hexfortress.entity.client.model;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.hexnowloading.hexfortress.HexFortress;
-import net.hexnowloading.hexfortress.entity.WildfireEntity;
-import net.hexnowloading.hexfortress.entity.client.animation.WildfireAnimation;
+import net.hexnowloading.hexfortress.entity.FirestormEntity;
+import net.hexnowloading.hexfortress.entity.client.animation.FirestormAnimation;
 import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
@@ -13,8 +13,8 @@ import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 
-public class WildfireModel<T extends WildfireEntity> extends HierarchicalModel<T> {
-	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(HexFortress.MODID, "furious_blaze"), "main");
+public class FirestormModel<T extends FirestormEntity> extends HierarchicalModel<T> {
+	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(HexFortress.MODID, "firestorm"), "main");
 	private final ModelPart root;
 	private final ModelPart head;
 	private final ModelPart rods;
@@ -28,7 +28,7 @@ public class WildfireModel<T extends WildfireEntity> extends HierarchicalModel<T
 	private final ModelPart lower_rod3;
 	private final ModelPart lower_rod4;
 
-	public WildfireModel(ModelPart root) {
+	public FirestormModel(ModelPart root) {
 		this.root = root;
 		this.head = root.getChild("head");
 		this.rods = root.getChild("rods");
@@ -111,8 +111,8 @@ public class WildfireModel<T extends WildfireEntity> extends HierarchicalModel<T
 		this.animateIdlePose(ageInTicks);
 		this.animateRodSpin(entity, ageInTicks);
 		this.animateLowerRodSpin(ageInTicks);
-		this.animate(entity.attackAnimationState, WildfireAnimation.WILDFIRE_ATTACK, ageInTicks);
-		this.animate(entity.attackRevertAnimationState, WildfireAnimation.WILDFIRE_ATTACK_REVERT, ageInTicks);
+		this.animate(entity.attackAnimationState, FirestormAnimation.FIRESTORM_ATTACK, ageInTicks);
+		this.animate(entity.attackRevertAnimationState, FirestormAnimation.FIRESTORM_ATTACK_REVERT, ageInTicks);
 	}
 
 	private void animateHeadLookTarget(float netHeadYaw, float headPitch) {

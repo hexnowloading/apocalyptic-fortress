@@ -12,9 +12,8 @@ public class ModEvents {
 
     @SubscribeEvent
     public static void onEntityAttributeCreation(EntityAttributeCreationEvent event) {
-        event.put(HFEntityTypes.MODIFIED_WITHER_SKELETON.get(), ModifiedWitherSkeletonEntity.createAttributes().build());
         event.put(HFEntityTypes.TEST_ENTITY.get(), TestEntity.createAttributes().build());
-        event.put(HFEntityTypes.WILDFIRE.get(), WildfireEntity.createAttributes().build());
+        event.put(HFEntityTypes.FIRESTORM.get(), FirestormEntity.createAttributes().build());
         event.put(HFEntityTypes.FORTRESS_WALKER.get(), FortressWalkerEntity.createAttributes().build());
     }
 }

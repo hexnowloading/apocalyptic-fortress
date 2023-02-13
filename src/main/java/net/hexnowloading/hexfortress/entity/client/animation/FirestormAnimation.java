@@ -5,8 +5,8 @@ import net.minecraft.client.animation.AnimationDefinition;
 import net.minecraft.client.animation.Keyframe;
 import net.minecraft.client.animation.KeyframeAnimations;
 
-public class WildfireAnimation {
-    public static final AnimationDefinition WILDFIRE_ATTACK = AnimationDefinition.Builder.withLength(1f)
+public class FirestormAnimation {
+    public static final AnimationDefinition FIRESTORM_ATTACK = AnimationDefinition.Builder.withLength(1f)
             .addAnimation("rod1",
                     new AnimationChannel(AnimationChannel.Targets.POSITION,
                             new Keyframe(0f, KeyframeAnimations.posVec(0f, 0f, 0f),
@@ -32,7 +32,7 @@ public class WildfireAnimation {
                             new Keyframe(1f, KeyframeAnimations.posVec(0f, 0f, 5f),
                                     AnimationChannel.Interpolations.CATMULLROM))).build();
 
-    public static final AnimationDefinition WILDFIRE_ATTACK_REVERT = AnimationDefinition.Builder.withLength(1f)
+    public static final AnimationDefinition FIRESTORM_ATTACK_REVERT = AnimationDefinition.Builder.withLength(1f)
             .addAnimation("rod1",
                     new AnimationChannel(AnimationChannel.Targets.POSITION,
                             new Keyframe(0f, KeyframeAnimations.posVec(5f, 0f, 0f),

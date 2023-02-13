@@ -1,25 +1,18 @@
 package net.hexnowloading.hexfortress.block.entity;
 
-import net.hexnowloading.hexfortress.entity.WildfireEntity;
+import net.hexnowloading.hexfortress.entity.FirestormEntity;
 import net.hexnowloading.hexfortress.registry.HFBlockEntities;
 import net.hexnowloading.hexfortress.registry.HFProperties;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.util.RandomSource;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.monster.AbstractSkeleton;
 import net.minecraft.world.entity.monster.Blaze;
-import net.minecraft.world.entity.monster.Monster;
-import net.minecraft.world.entity.monster.WitherSkeleton;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -61,7 +54,7 @@ public class ResistanceCancelerBlockEntity extends BlockEntity {
             List<Player> list = level.getEntitiesOfClass(Player.class, aabb);
             List<AbstractSkeleton> skeletonList = level.getEntitiesOfClass(AbstractSkeleton.class, aabb);
             List<Blaze> blazeList = level.getEntitiesOfClass(Blaze.class, aabb);
-            List<WildfireEntity> wildfireList = level.getEntitiesOfClass(WildfireEntity.class, aabb);
+            List<FirestormEntity> wildfireList = level.getEntitiesOfClass(FirestormEntity.class, aabb);
 
             for (Player player : list) {
                 if (player.hasEffect(MobEffects.FIRE_RESISTANCE)) {
@@ -83,7 +76,7 @@ public class ResistanceCancelerBlockEntity extends BlockEntity {
                     blaze.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 40, 2));
                 }
             }
-            for (WildfireEntity wildfire : wildfireList) {
+            for (FirestormEntity wildfire : wildfireList) {
                 if (level.getDifficulty() == Difficulty.NORMAL) {
                     wildfire.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 40, 1));
                 } else if (level.getDifficulty() == Difficulty.HARD) {

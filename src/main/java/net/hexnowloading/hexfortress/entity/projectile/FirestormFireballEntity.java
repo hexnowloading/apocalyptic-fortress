@@ -16,11 +16,11 @@ import net.minecraft.world.phys.HitResult;
 
 import static net.minecraft.world.entity.EntityType.SMALL_FIREBALL;
 
-public class WildfireFireball extends Fireball {
+public class FirestormFireballEntity extends Fireball {
 
     float fireballDamage = 10.0F;
 
-    public WildfireFireball(Level level, LivingEntity shooter, double accelerationX, double accelerationY, double accelerationZ) {
+    public FirestormFireballEntity(Level level, LivingEntity shooter, double accelerationX, double accelerationY, double accelerationZ) {
         super(SMALL_FIREBALL, shooter, accelerationX, accelerationY, accelerationZ, level);
     }
 

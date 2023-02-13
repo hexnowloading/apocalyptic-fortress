@@ -13,7 +13,7 @@
   "advancements.hexfortress.loot_locked_chest.description": "Unlock the Locked Dungeon Chest and claim the reward",
   "advancements.hexfortress.obtain_blaze_core.title": "Repurposed Rod",
   "advancements.hexfortress.obtain_blaze_core.description": "Feed the Fortress Beacon with Blaze Powder to obtain the Blaze Core",
-  "advancements.hexfortress.obtain_blaze_scepter.title": "Scepter of the Flame",
+  "advancements.hexfortress.obtain_blaze_scepter.title": "Scepter of Flame",
   "advancements.hexfortress.obtain_blaze_scepter.description": "Craft the Blaze Scepter",
   "advancements.hexfortress.obtain_blaze_rod_sword.title": "Rod and Hilt",
   "advancements.hexfortress.obtain_blaze_rod_sword.description": "Upgrade Netherite Sword to Blaze Rod Sword using the Blaze Core",
@@ -31,6 +31,10 @@
   "advancements.hexfortress.obtain_witherite_sword.description": "Upgrade the Netherite Sword to Witherite Sword using the Witherite Bone",
   "advancements.hexfortress.obtain_obsidian_sword.title": "Fragile, but Sharp",
   "advancements.hexfortress.obtain_obsidian_sword.description": "Upgrade the Netherite Sword to Obsidian Sword using the Obsidian Talisman",
+  "advancements.hexfortress.obtain_firestorm_sword.title": "Blazing Blade",
+  "advancements.hexfortress.obtain_firestorm_sword.description": "Defeat the Firestorm and upgrade the Blaze Rod Sword",
+  "advancements.hexfortress.obtain_firestorm_scepter.title": "Scepter of Blazing Wind",
+  "advancements.hexfortress.obtain_firestorm_scepter.description": "Defeat the Firestorm and upgrade the Blaze Scepter",
 
   "warning.hexfortress.locked_chest": "You need a key to open this Chest!",
   "warning.hexfortress.locked_resistance_canceler": "You need a key to unlock this beacon!",
@@ -41,17 +45,21 @@
   "warning.hexfortress.cannot_break": "This block is protected by magic!",
   "warning.hexfortress.pot_of_greed_remaining_items": "Remaining Items: %d",
 
-  "item.hexfortress.wildfire_spawn_egg": "Wildfire Spawn Egg [WIP]",
-  "item.hexfortress.blaze_shielder_spawn_egg": "Blaze Shielder Spawn Egg [WIP]",
+  "item.hexfortress.firestorm_spawn_egg": "Firestorm Spawn Egg",
   "item.hexfortress.modified_wither_skeleton_spawn_egg": "Wither Skeleton Spawn Egg",
 
   "item.hexfortress.wither_petal": "Wither Petal",
   "item.hexfortress.blaze_key": "Blaze Key",
   "item.hexfortress.blaze_core": "Blaze Core",
+  "item.hexfortress.blaze_pillar": "Blaze Pillar",
   "item.hexfortress.blaze_staff": "Blaze Scepter",
+  "item.hexfortress.firestorm_staff": "Firestorm Scepter",
   "item.hexfortress.blaze_rod_sword": "Blaze Rod Sword",
   "item.hexfortress.blaze_rod_sword.tooltip": "Burns enemy for 12 seconds (11 Fire Damage)",
+  "item.hexfortress.firestorm_sword": "Firestorm Sword",
+  "item.hexfortress.firestorm_sword.tooltip": "Burns enemy for 12 seconds (11 Fire Damage). Deals 2 extra damage on burning enemy",
   "item.hexfortress.blaze_staff_charges": "%d charges left",
+  "item.hexfortress.firestorm_staff_charges": "%d charges left",
   "item.hexfortress.witherite_sword": "Witherite Sword",
   "item.hexfortress.witherite_sword.tooltip": "Effects enemy with Wither I for 10 seconds (4 Wither Damage)",
   "item.hexfortress.wither_bow": "Wither Bow [WIP]",
@@ -120,5 +128,5 @@
   "block.hexfortress.pot_of_greed": "Pot of Greed",
 
   "entity.hexfortress.modified_wither_skeleton": "Wither Skeleton",
-  "entity.hexfortress.wildfire": "Wildfire"
+  "entity.hexfortress.firestorm": "Firestorm"
 }

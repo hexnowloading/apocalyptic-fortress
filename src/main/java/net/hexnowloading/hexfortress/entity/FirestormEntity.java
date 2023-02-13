@@ -1,6 +1,6 @@
 package net.hexnowloading.hexfortress.entity;
 
-import net.hexnowloading.hexfortress.entity.projectile.WildfireFireball;
+import net.hexnowloading.hexfortress.entity.projectile.FirestormFireballEntity;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -18,7 +18,6 @@ import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.projectile.SmallFireball;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.pathfinder.BlockPathTypes;
 import net.minecraft.world.phys.Vec3;
@@ -26,14 +25,14 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.EnumSet;
 
-public class WildfireEntity extends Monster {
+public class FirestormEntity extends Monster {
     private float allowedHeightOffset = 0.5F;
     private int nextHeightOffsetChangeTick;
-    private static final EntityDataAccessor<Boolean> DATA_FLAGS_ID = SynchedEntityData.defineId(WildfireEntity.class, EntityDataSerializers.BOOLEAN);
+    private static final EntityDataAccessor<Boolean> DATA_FLAGS_ID = SynchedEntityData.defineId(FirestormEntity.class, EntityDataSerializers.BOOLEAN);
     public final AnimationState attackAnimationState = new AnimationState();
     public final AnimationState attackRevertAnimationState = new AnimationState();
 
-    public WildfireEntity(EntityType<? extends Monster> entityType, Level level) {
+    public FirestormEntity(EntityType<? extends Monster> entityType, Level level) {
         super(entityType, level);
         this.setPathfindingMalus(BlockPathTypes.WATER, -1.0F);
         this.setPathfindingMalus(BlockPathTypes.LAVA, 8.0F);
@@ -59,7 +58,7 @@ public class WildfireEntity extends Monster {
 
     @Override
     protected void registerGoals() {
-        this.goalSelector.addGoal(4, new WildfireAttackGoal(this));
+        this.goalSelector.addGoal(4, new FirestormAttackGoal(this));
         this.goalSelector.addGoal(5, new MoveTowardsRestrictionGoal(this, 1.0D));
         this.goalSelector.addGoal(7, new WaterAvoidingRandomStrollGoal(this, 1.0D, 0.0F));
         this.goalSelector.addGoal(8, new LookAtPlayerGoal(this, Player.class, 8.0F));
@@ -166,8 +165,8 @@ public class WildfireEntity extends Monster {
         super.tick();
     }
 
-    static class WildfireAttackGoal extends Goal {
-        private final WildfireEntity wildfire;
+    static class FirestormAttackGoal extends Goal {
+        private final FirestormEntity firestorm;
         private static final int FIREBALL_SHOT_AT_ONCE = 3;
         private static final int SHOOTING_ATTEMPTS = 10;
         private static final int ATTACK_COOLDOWN = 60;
@@ -175,15 +174,15 @@ public class WildfireEntity extends Monster {
         private int attackTime;
         private int lastSeen;
 
-        public WildfireAttackGoal(WildfireEntity entity) {
-            this.wildfire = entity;
+        public FirestormAttackGoal(FirestormEntity entity) {
+            this.firestorm = entity;
             this.setFlags(EnumSet.of(Flag.MOVE, Flag.LOOK));
         }
 
         @Override
         public boolean canUse() {
-            LivingEntity livingEntity = this.wildfire.getTarget();
-            return livingEntity != null && livingEntity.isAlive() && this.wildfire.canAttack(livingEntity);
+            LivingEntity livingEntity = this.firestorm.getTarget();
+            return livingEntity != null && livingEntity.isAlive() && this.firestorm.canAttack(livingEntity);
         }
 
         @Override
@@ -191,7 +190,7 @@ public class WildfireEntity extends Monster {
 
         @Override
         public void stop() {
-            this.wildfire.setCharged(false);
+            this.firestorm.setCharged(false);
             this.lastSeen = 0;
         }
 
@@ -199,22 +198,22 @@ public class WildfireEntity extends Monster {
         public boolean requiresUpdateEveryTick() { return true; }
 
         private double getFollowDistance() {
-            return this.wildfire.getAttributeValue(Attributes.FOLLOW_RANGE);
+            return this.firestorm.getAttributeValue(Attributes.FOLLOW_RANGE);
         }
 
         @Override
         public void tick() {
             --this.attackTime;
-            LivingEntity livingEntity = this.wildfire.getTarget();
+            LivingEntity livingEntity = this.firestorm.getTarget();
             if (livingEntity != null) {
-                boolean flag = this.wildfire.getSensing().hasLineOfSight(livingEntity);
+                boolean flag = this.firestorm.getSensing().hasLineOfSight(livingEntity);
                 if (flag) {
                     this.lastSeen = 0;
                 } else {
                     this.lastSeen++;
                 }
 
-                double targetDistance = this.wildfire.distanceToSqr(livingEntity);
+                double targetDistance = this.firestorm.distanceToSqr(livingEntity);
                 if (targetDistance < 4.0D) {
                     if (!flag) {
                         return;
@@ -222,46 +221,46 @@ public class WildfireEntity extends Monster {
 
                     if (this.attackTime <= 0) {
                         this.attackTime = 20;
-                        this.wildfire.doHurtTarget(livingEntity);
+                        this.firestorm.doHurtTarget(livingEntity);
                     }
 
-                    this.wildfire.getMoveControl().setWantedPosition(livingEntity.getX(), livingEntity.getY(), livingEntity.getZ(), 2.0D);
+                    this.firestorm.getMoveControl().setWantedPosition(livingEntity.getX(), livingEntity.getY(), livingEntity.getZ(), 2.0D);
                 } else if (targetDistance < this.getFollowDistance() * this.getFollowDistance() && flag) {
-                    double d1 = livingEntity.getX() - this.wildfire.getX();
-                    double d2 = livingEntity.getY(0.5D) - this.wildfire.getY(0.5D);
-                    double d3 = livingEntity.getZ() - this.wildfire.getZ();
+                    double d1 = livingEntity.getX() - this.firestorm.getX();
+                    double d2 = livingEntity.getY(0.5D) - this.firestorm.getY(0.5D);
+                    double d3 = livingEntity.getZ() - this.firestorm.getZ();
                     if (this.attackTime <= 0) {
                         ++this.attackStep;
                         if (this.attackStep == 1) {
                             this.attackTime = ATTACK_COOLDOWN;
-                            this.wildfire.setCharged(true);
+                            this.firestorm.setCharged(true);
                         } else if (this.attackStep <= SHOOTING_ATTEMPTS + 1) {
                             this.attackTime = 6;
                         } else {
                             this.attackTime = 100;
                             this.attackStep = 0;
-                            this.wildfire.setCharged(false);
+                            this.firestorm.setCharged(false);
                         }
 
                         if (this.attackStep > 1) {
                             double d4 = Math.sqrt(Math.sqrt(targetDistance)) * 0.5D;
-                            if (!this.wildfire.isSilent()) {
-                                this.wildfire.level.levelEvent((Player)null, 1018, this.wildfire.blockPosition(), 0);
+                            if (!this.firestorm.isSilent()) {
+                                this.firestorm.level.levelEvent((Player)null, 1018, this.firestorm.blockPosition(), 0);
                             }
 
                             for (int i = 0; i < FIREBALL_SHOT_AT_ONCE; ++i) {
-                                WildfireFireball wildfireFireball = new WildfireFireball(this.wildfire.level, this.wildfire, this.wildfire.getRandom().triangle(d1, 5.297D * d4), d2, this.wildfire.getRandom().triangle(d3, 5.297D * d4));
-                                wildfireFireball.setPos(wildfireFireball.getX(), this.wildfire.getY(0.5D) + 0.5D, wildfireFireball.getZ());
-                                wildfireFireball.setFireballDamage(10);
-                                //SmallFireball smallFireball = new SmallFireball(this.wildfire.level, this.wildfire, this.wildfire.getRandom().triangle(d1, 2.297D * d4), d2, this.wildfire.getRandom().triangle(d3, 2.297D * d4));
-                                //smallFireball.setPos(smallFireball.getX(), this.wildfire.getY(0.5D) + 0.5D, smallFireball.getZ());
-                                this.wildfire.level.addFreshEntity(wildfireFireball);
+                                FirestormFireballEntity firestormFireball = new FirestormFireballEntity(this.firestorm.level, this.firestorm, this.firestorm.getRandom().triangle(d1, 5.297D * d4), d2, this.firestorm.getRandom().triangle(d3, 5.297D * d4));
+                                firestormFireball.setPos(firestormFireball.getX(), this.firestorm.getY(0.5D) + 0.5D, firestormFireball.getZ());
+                                firestormFireball.setFireballDamage(10);
+                                //SmallFireball smallFireball = new SmallFireball(this.firestorm.level, this.firestorm, this.firestorm.getRandom().triangle(d1, 2.297D * d4), d2, this.firestorm.getRandom().triangle(d3, 2.297D * d4));
+                                //smallFireball.setPos(smallFireball.getX(), this.firestorm.getY(0.5D) + 0.5D, smallFireball.getZ());
+                                this.firestorm.level.addFreshEntity(firestormFireball);
                             }
                         }
                     }
-                    this.wildfire.getLookControl().setLookAt(livingEntity, 10.0F, 10.0F);
+                    this.firestorm.getLookControl().setLookAt(livingEntity, 10.0F, 10.0F);
                 } else if (this.lastSeen < 5) {
-                    this.wildfire.getMoveControl().setWantedPosition(livingEntity.getX(), livingEntity.getY(), livingEntity.getZ(), 1.0D);
+                    this.firestorm.getMoveControl().setWantedPosition(livingEntity.getX(), livingEntity.getY(), livingEntity.getZ(), 1.0D);
                 }
                 super.tick();
             }

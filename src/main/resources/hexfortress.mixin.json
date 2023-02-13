@@ -4,7 +4,8 @@
   "package": "net.hexnowloading.hexfortress.mixin",
   "compatibilityLevel": "JAVA_17",
   "client": [
-    "TemplatePoolWeightMixin"
+    "TemplatePoolWeightMixin",
+    "WitherSkeletonMixin"
   ],
   "injectors": {
     "defaultRequire": 1

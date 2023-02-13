@@ -1,12 +1,12 @@
 {
-  "parent": "hexfortress:obtain_blaze_core",
+  "parent": "hexfortress:obtain_blaze_rod_sword",
   "criteria": {
-    "blaze_rod_sword": {
+    "firestorm_sword": {
       "conditions": {
         "items": [
           {
             "items": [
-              "hexfortress:blaze_rod_sword"
+              "hexfortress:firestorm_sword"
             ]
           }
         ]
@@ -17,21 +17,21 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "advancements.hexfortress.obtain_blaze_rod_sword.description"
+      "translate": "advancements.hexfortress.obtain_firestorm_sword.description"
     },
-    "frame": "task",
+    "frame": "goal",
     "hidden": false,
     "icon": {
-      "item": "hexfortress:blaze_rod_sword"
+      "item": "hexfortress:firestorm_sword"
     },
     "show_toast": true,
     "title": {
-      "translate": "advancements.hexfortress.obtain_blaze_rod_sword.title"
+      "translate": "advancements.hexfortress.obtain_firestorm_sword.title"
     }
   },
   "requirements": [
     [
-      "blaze_rod_sword"
+      "firestorm_sword"
     ]
   ]
 }

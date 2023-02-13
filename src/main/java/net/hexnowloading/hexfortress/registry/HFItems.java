@@ -16,6 +16,7 @@ public class HFItems {
     // Ingredients Items
     public static final RegistryObject<Item> BLAZE_KEY = ITEMS.register("blaze_key", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> BLAZE_CORE = ITEMS.register("blaze_core", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> BLAZE_PILLAR = ITEMS.register("blaze_pillar", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> WITHER_PETAL = ITEMS.register("wither_petal", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> WITHER_SKULL_FRAGMENT = ITEMS.register("wither_skull_fragment", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> WITHERITE_BONE = ITEMS.register("witherite_bone", () -> new Item(new Item.Properties()));
@@ -29,7 +30,9 @@ public class HFItems {
 
     // Weapon Items
     public static final RegistryObject<Item> BLAZE_STAFF = ITEMS.register("blaze_staff", () -> new BlazeStaffItem(new Item.Properties().stacksTo(1).durability(100)));
+    public static final RegistryObject<Item> FIRESTORM_STAFF = ITEMS.register("firestorm_staff", () -> new FirestormStaffItem(new Item.Properties().stacksTo(1).durability(300)));
     public static final RegistryObject<Item> BLAZE_ROD_SWORD = ITEMS.register("blaze_rod_sword", () -> new BlazeRodSwordItem(Tiers.NETHERITE, 4, -2.4F, (new Item.Properties()).stacksTo(1).durability(2031)));
+    public static final RegistryObject<Item> FIRESTORM_SWORD = ITEMS.register("firestorm_sword", () -> new FirestormSwordItem(Tiers.NETHERITE, 5, -2.4F, (new Item.Properties()).stacksTo(1).durability(2031)));
     public static final RegistryObject<Item> WITHERITE_SWORD = ITEMS.register("witherite_sword", () -> new WitheriteSwordItem(Tiers.NETHERITE, 4, -2.4F, (new Item.Properties()).stacksTo(1).durability(2031)));
     public static final RegistryObject<Item> WITHER_BOW = ITEMS.register("wither_bow", () -> new WitherBowItem((new Item.Properties())));
     public static final RegistryObject<Item> REFINED_GOLDEN_SWORD = ITEMS.register("refined_golden_sword", () -> new RoyalGoldenSwordItem(Tiers.GOLD, 4, -2.2F, (new Item.Properties()).stacksTo(1).durability(64)));
@@ -41,7 +44,7 @@ public class HFItems {
 
 
     // Spawn Eggs
-    public  static  final RegistryObject<Item> MODIFIED_WITHER_SKELETON_EGG = ITEMS.register("modified_wither_skeleton_spawn_egg", () -> new ForgeSpawnEggItem(HFEntityTypes.MODIFIED_WITHER_SKELETON, 0x474D4D, 0x141414, new Item.Properties()));
+    public static final RegistryObject<Item> FIRESTORM_EGG = ITEMS.register("firestorm_spawn_egg", () -> new ForgeSpawnEggItem(HFEntityTypes.FIRESTORM, 0xF6B201, 0xA80E0E, new Item.Properties()));
 
     // Block Items
     public static final RegistryObject<Item> LOCKED_CHEST_ITEM = ITEMS.register("locked_chest", () -> new LockedChestBlockItem(HFBlocks.LOCKED_CHEST.get(), new Item.Properties()));

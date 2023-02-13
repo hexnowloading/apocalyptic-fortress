@@ -7,7 +7,7 @@
       "bounding_box": "piece",
       "spawns": [
         {
-          "type": "hexfortress:wildfire",
+          "type": "hexfortress:firestorm",
           "maxCount": 1,
           "minCount": 1,
           "weight": 2
@@ -34,13 +34,7 @@
           "type": "minecraft:wither_skeleton",
           "maxCount": 5,
           "minCount": 5,
-          "weight": 4
-        },
-        {
-          "type": "hexfortress:modified_wither_skeleton",
-          "maxCount": 5,
-          "minCount": 5,
-          "weight": 4
+          "weight": 8
         },
         {
           "type": "minecraft:skeleton",

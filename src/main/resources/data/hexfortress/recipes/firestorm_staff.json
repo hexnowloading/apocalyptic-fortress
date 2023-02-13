@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "addition": {
+    "item": "hexfortress:blaze_pillar"
+  },
+  "base": {
+    "item": "hexfortress:blaze_staff"
+  },
+  "result": {
+    "item": "hexfortress:firestorm_staff"
+  }
+}
