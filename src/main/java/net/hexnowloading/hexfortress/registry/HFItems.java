@@ -25,9 +25,9 @@ public class HFItems {
     public static final RegistryObject<Item> FRAGMENT_OF_GREED = ITEMS.register("fragment_of_greed", () -> new Item(new Item.Properties().tab(HFCreativeModeTab.APOCALYPTIC_FORTRESS_TAB)));
     public static final RegistryObject<Item> CREST_OF_GREED = ITEMS.register("crest_of_greed", () -> new Item(new Item.Properties().tab(HFCreativeModeTab.APOCALYPTIC_FORTRESS_TAB)));
     public static final RegistryObject<Item> EMBLEM_OF_GREED = ITEMS.register("emblem_of_greed", () -> new Item(new Item.Properties().tab(HFCreativeModeTab.APOCALYPTIC_FORTRESS_TAB)));
-    public static final RegistryObject<Item> OBSIDIAN_TEAR = ITEMS.register("obsidian_tear", () -> new Item(new Item.Properties().tab(HFCreativeModeTab.APOCALYPTIC_FORTRESS_TAB)));
+    //public static final RegistryObject<Item> OBSIDIAN_TEAR = ITEMS.register("obsidian_tear", () -> new Item(new Item.Properties().tab(HFCreativeModeTab.APOCALYPTIC_FORTRESS_TAB)));
     public static final RegistryObject<Item> OBSIDIAN_TALISMAN = ITEMS.register("obsidian_talisman", () -> new Item(new Item.Properties().tab(HFCreativeModeTab.APOCALYPTIC_FORTRESS_TAB)));
-    public static final RegistryObject<Item> ENCHANTED_OBSIDIAN_TALISMAN = ITEMS.register("enchanted_obsidian_talisman", () -> new EnchantedObsidianTalismanItem(new Item.Properties().tab(HFCreativeModeTab.APOCALYPTIC_FORTRESS_TAB)));
+    //public static final RegistryObject<Item> ENCHANTED_OBSIDIAN_TALISMAN = ITEMS.register("enchanted_obsidian_talisman", () -> new EnchantedObsidianTalismanItem(new Item.Properties().tab(HFCreativeModeTab.APOCALYPTIC_FORTRESS_TAB)));
 
     // Weapon Items
     public static final RegistryObject<Item> BLAZE_STAFF = ITEMS.register("blaze_staff", () -> new BlazeStaffItem(new Item.Properties().stacksTo(1).durability(100).tab(HFCreativeModeTab.APOCALYPTIC_FORTRESS_TAB)));
@@ -35,12 +35,12 @@ public class HFItems {
     public static final RegistryObject<Item> BLAZE_ROD_SWORD = ITEMS.register("blaze_rod_sword", () -> new BlazeRodSwordItem(Tiers.NETHERITE, 4, -2.4F, (new Item.Properties()).stacksTo(1).durability(2031).tab(HFCreativeModeTab.APOCALYPTIC_FORTRESS_TAB)));
     public static final RegistryObject<Item> FIRESTORM_SWORD = ITEMS.register("firestorm_sword", () -> new FirestormSwordItem(Tiers.NETHERITE, 5, -2.4F, (new Item.Properties()).stacksTo(1).durability(2031).tab(HFCreativeModeTab.APOCALYPTIC_FORTRESS_TAB)));
     public static final RegistryObject<Item> WITHERITE_SWORD = ITEMS.register("witherite_sword", () -> new WitheriteSwordItem(Tiers.NETHERITE, 4, -2.4F, (new Item.Properties()).stacksTo(1).durability(2031).tab(HFCreativeModeTab.APOCALYPTIC_FORTRESS_TAB)));
-    public static final RegistryObject<Item> WITHER_BOW = ITEMS.register("wither_bow", () -> new WitherBowItem((new Item.Properties().tab(HFCreativeModeTab.APOCALYPTIC_FORTRESS_TAB))));
+    //public static final RegistryObject<Item> WITHER_BOW = ITEMS.register("wither_bow", () -> new WitherBowItem((new Item.Properties().tab(HFCreativeModeTab.APOCALYPTIC_FORTRESS_TAB))));
     public static final RegistryObject<Item> REFINED_GOLDEN_SWORD = ITEMS.register("refined_golden_sword", () -> new RoyalGoldenSwordItem(Tiers.GOLD, 4, -2.2F, (new Item.Properties()).stacksTo(1).durability(64).tab(HFCreativeModeTab.APOCALYPTIC_FORTRESS_TAB)));
     public static final RegistryObject<Item> REFORGED_GOLDEN_SWORD = ITEMS.register("reforged_golden_sword", () -> new RoyalGoldenSwordItem(Tiers.GOLD, 5, -2.0F, (new Item.Properties()).stacksTo(1).durability(128).tab(HFCreativeModeTab.APOCALYPTIC_FORTRESS_TAB)));
     public static final RegistryObject<Item> ROYAL_GOLDEN_SWORD = ITEMS.register("royal_golden_sword", () -> new RoyalGoldenSwordItem(Tiers.GOLD, 6, -1.8F, (new Item.Properties()).stacksTo(1).durability(256).tab(HFCreativeModeTab.APOCALYPTIC_FORTRESS_TAB)));
     public static final RegistryObject<Item> OBSIDIAN_SWORD = ITEMS.register("obsidian_sword", () -> new ObsidianSwordItem(Tiers.NETHERITE, 4, -2.4F, (new Item.Properties()).stacksTo(1).durability(2031).tab(HFCreativeModeTab.APOCALYPTIC_FORTRESS_TAB)));
-    public static final RegistryObject<Item> ENCHANTED_OBSIDIAN_SWORD = ITEMS.register("enchanted_obsidian_sword", () -> new EnchantedObsidianSwordItem(Tiers.NETHERITE, 4, -2.4F, (new Item.Properties()).stacksTo(1).durability(2031).tab(HFCreativeModeTab.APOCALYPTIC_FORTRESS_TAB)));
+    //public static final RegistryObject<Item> ENCHANTED_OBSIDIAN_SWORD = ITEMS.register("enchanted_obsidian_sword", () -> new EnchantedObsidianSwordItem(Tiers.NETHERITE, 4, -2.4F, (new Item.Properties()).stacksTo(1).durability(2031).tab(HFCreativeModeTab.APOCALYPTIC_FORTRESS_TAB)));
     public static final RegistryObject<Item> WITHERITE_SHEARS = ITEMS.register("witherite_shears", () -> new WitheriteShearsItem((new Item.Properties()).stacksTo(1).durability(2031).tab(HFCreativeModeTab.APOCALYPTIC_FORTRESS_TAB)));
 
 
