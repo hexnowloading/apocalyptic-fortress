@@ -14,7 +14,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(WitherSkeleton.class)
 public class WitherSkeletonMixin {
-    @Inject(method = "Lnet/minecraft/world/entity/monster/WitherSkeleton;populateDefaultEquipmentEnchantments(Lnet/minecraft/util/RandomSource;Lnet/minecraft/world/DifficultyInstance;)V", at = @At("HEAD"))
+    @Inject(method = "Lnet/minecraft/world/entity/monster/WitherSkeleton;populateDefaultEquipmentSlots(Lnet/minecraft/util/RandomSource;Lnet/minecraft/world/DifficultyInstance;)V", at = @At("TAIL"))
     public void populateDefaultEquipmentSlots(RandomSource randomSource, DifficultyInstance difficultyInstance, CallbackInfo ci) {
         WitherSkeleton witherSkeleton = (WitherSkeleton) (Object) this;
         if (HFCommonConfigs.WITHER_SKELETON_BOW.get()) {

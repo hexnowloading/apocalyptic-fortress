@@ -191,7 +191,6 @@ public class DungeonChestBlockEntity extends RandomizableContainerBlockEntity im
 
     // Animation Controls
     //-------------------
-
     public static final AnimationBuilder CLOSED = new AnimationBuilder().addAnimation("closed", false);
     public static final AnimationBuilder OPENED = new AnimationBuilder().addAnimation("opened", false);
     public ChestState getChestState() { return this.getBlockState().getValue(DungeonChestBlockEntity.CHEST_STATE); }

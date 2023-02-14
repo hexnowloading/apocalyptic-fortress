@@ -1,5 +1,5 @@
 modLoader="javafml" #mandatory
-loaderVersion="[44,)"
+loaderVersion="[43,)"
 license="All rights reserved"
 [[mods]]
 modId="hexfortress"
@@ -18,7 +18,7 @@ Have fun!
 [[dependencies.hexfortress]]
 modId="forge"
 mandatory=true
-versionRange="[44,)"
+versionRange="[43,)"
 ordering="NONE"
 side="BOTH"
 [[dependencies.hexfortress]]

@@ -35,7 +35,9 @@ minecraft {
 
             property 'forge.logging.console.level', 'debug'
 
-            property 'forge.enabledGameTestNamespaces', 'examplemod'
+            property 'forge.enabledGameTestNamespaces', 'hexfortress'
+
+            arg "-mixin.config=hexfortress.mixin.json"
 
             mods {
                 hexfortress {
@@ -52,6 +54,8 @@ minecraft {
 
             property 'forge.enabledGameTestNamespaces', 'hexfortress'
 
+            arg "-mixin.config=hexfortress.mixin.json"
+
             mods {
                 hexfortress {
                     source sourceSets.main
@@ -67,6 +71,8 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             args '--mod', 'hexfortress', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
+
+            arg "-mixin.config=hexfortress.mixin.json"
 
             mods {
                 hexfortress {
@@ -91,9 +97,9 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.jetbrains:annotations:20.1.0'
     minecraft 'net.minecraftforge:forge:1.19.2-43.2.4'
     implementation fg.deobf('software.bernie.geckolib:geckolib-forge-1.19:3.1.39')
+    annotationProcessor "org.spongepowered:mixin:0.8.5:processor"
 }
 
 jar {
