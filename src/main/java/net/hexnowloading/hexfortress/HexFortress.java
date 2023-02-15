@@ -3,6 +3,7 @@ package net.hexnowloading.hexfortress;
 import com.mojang.logging.LogUtils;
 import net.hexnowloading.hexfortress.config.HFClientConfigs;
 import net.hexnowloading.hexfortress.config.HFCommonConfigs;
+import net.hexnowloading.hexfortress.event.ServerEvents;
 import net.hexnowloading.hexfortress.registry.*;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -43,7 +44,6 @@ public class HexFortress {
         HFBlocks.BLOCKS.register(eventBus);
         HFBlockEntities.BLOCK_ENTITY_TYPES.register(eventBus);
         HFItems.ITEMS.register(eventBus);
-        HFEnchantments.ENCHANTMENTS.register(eventBus);
         HFEntityTypes.ENTITY_TYPES.register(eventBus);
         HFMenuTypes.MENU_TYPES.register(eventBus);
         HFStructureTypes.STRUCTURE_TYPES.register(eventBus);
@@ -52,6 +52,7 @@ public class HexFortress {
         ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, HFCommonConfigs.SPEC, "apocalyptic-fortress-mod-common.toml");
 
         MinecraftForge.EVENT_BUS.register(this);
+        MinecraftForge.EVENT_BUS.register(new ServerEvents());
     }
 
 

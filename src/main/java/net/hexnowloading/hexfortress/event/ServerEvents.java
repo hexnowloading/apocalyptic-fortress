@@ -1,24 +1,22 @@
 package net.hexnowloading.hexfortress.event;
 
 import net.hexnowloading.hexfortress.HexFortress;
-import net.hexnowloading.hexfortress.block.LockedChestBlock;
 import net.hexnowloading.hexfortress.block.ResistanceCancelerBlock;
-import net.hexnowloading.hexfortress.block.property.LockedState;
+import net.hexnowloading.hexfortress.config.HFCommonConfigs;
 import net.hexnowloading.hexfortress.registry.HFProperties;
-import net.minecraft.core.BlockPos;
-import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
-import net.minecraft.util.RandomSource;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.monster.WitherSkeleton;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraftforge.event.entity.EntityJoinLevelEvent;
 import net.minecraftforge.event.level.BlockEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
-import java.util.logging.Level;
-
 @Mod.EventBusSubscriber(modid = HexFortress.MODID)
-public class HandleBreak {
+public class ServerEvents {
 
 
     @SubscribeEvent
@@ -32,6 +30,17 @@ public class HandleBreak {
                         event.setCanceled(true);
                     }
                 }
+            }
+        }
+    }
+
+    @SubscribeEvent
+    public void onEntityJoinLevel(EntityJoinLevelEvent event) {
+        if (HFCommonConfigs.WITHER_SKELETON_BOW.get() && event.getEntity() instanceof WitherSkeleton witherSkeleton && !event.getLevel().isClientSide && !event.loadedFromDisk()) {
+            if (event.getLevel().getRandom().nextFloat() < 0.60F) {
+                witherSkeleton.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(Items.STONE_SWORD));
+            } else {
+                witherSkeleton.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(Items.BOW));
             }
         }
     }
